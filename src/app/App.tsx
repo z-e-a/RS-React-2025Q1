@@ -4,11 +4,13 @@ import React from 'react';
 import { IPeople } from '../SWApi';
 import Header from '../widgets/Header';
 import PeopleList from '../widgets/PeopleList';
+import Loader from '../shared/Loader';
 
 interface IAppState {
   searchText: string;
   apiUrl: string;
   people: IPeople[];
+  isLoading: boolean;
 }
 
 class App extends React.Component<object, IAppState> {
@@ -22,12 +24,14 @@ class App extends React.Component<object, IAppState> {
       searchText: storedSearchText ?? '',
       apiUrl: import.meta.env.VITE_API_URL,
       people: [],
+      isLoading: true,
     };
     this.fetchData = this.fetchData.bind(this);
     this.search = this.search.bind(this);
   }
 
   componentDidMount() {
+    this.setState({ isLoading: false });
     this.fetchData();
   }
 
@@ -39,10 +43,12 @@ class App extends React.Component<object, IAppState> {
   }
 
   fetchData() {
+    this.setState({ isLoading: true });
     fetch(`${this.state.apiUrl}?search=${this.state.searchText.trim()}`)
       .then((response) => response.json())
       .then((data) => {
         this.setState({ people: data.results });
+        this.setState({ isLoading: false });
       })
       .catch((error) => console.log(error));
   }
@@ -50,6 +56,7 @@ class App extends React.Component<object, IAppState> {
   render() {
     return (
       <>
+        {this.state.isLoading && <Loader />}
         <Header
           searchText={this.state.searchText}
           searchCallback={this.search}
