@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 # dotenv environment variables file
-# .env
+.env
 # .env.test
 
 #Test coverage report

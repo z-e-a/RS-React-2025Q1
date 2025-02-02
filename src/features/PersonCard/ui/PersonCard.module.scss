@@ -1,0 +1,11 @@
+.card {
+  padding: 10px 15px;
+  border: 1px dotted #e1e1e1;
+  border-radius: 10px;
+}
+
+@media (prefers-color-scheme: light) {
+  .card {
+    border: 1px dotted black;
+  }
+}
