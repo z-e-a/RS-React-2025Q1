@@ -1,6 +1,6 @@
 import { StrictMode } from 'react';
 import { Container, createRoot } from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './app/App.tsx';
 import ErrorBoundary from './app/ErrorBoundary.tsx';
 
