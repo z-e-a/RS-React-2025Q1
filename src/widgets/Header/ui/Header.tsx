@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 import styles from './Header.module.scss';
 import Button from '../../../shared/Button';
@@ -9,43 +9,29 @@ interface IHeaderProps {
   searchCallback: (text: string) => void;
 }
 
-interface IHeaderState {
-  hasError: boolean;
-}
+const Header = (props: IHeaderProps) => {
+  const [hasError, setHasError] = useState<boolean>(false);
 
-class Header extends React.Component<IHeaderProps, IHeaderState> {
-  declare state: IHeaderState;
+  const onInvokeErrorClickHandler = () => {
+    setHasError(true);
+  };
 
-  constructor(props: IHeaderProps) {
-    super(props);
-    this.state = {
-      hasError: false,
-    };
-    this.onInvokeErrorClickHandler = this.onInvokeErrorClickHandler.bind(this);
+  if (hasError) {
+    throw new Error('Forced error');
   }
 
-  onInvokeErrorClickHandler() {
-    this.setState({ hasError: true });
-  }
-
-  render() {
-    if (this.state.hasError) {
-      throw new Error('Forced error');
-    }
-
-    return (
-      <header className={styles.header}>
-        <SearchBox
-          searchText={this.props.searchText}
-          searchCallback={this.props.searchCallback}
-        ></SearchBox>
-        <Button
-          text={'Invoke error'}
-          callback={this.onInvokeErrorClickHandler}
-        ></Button>
-      </header>
-    );
-  }
-}
+  return (
+    <header className={styles.header}>
+      <SearchBox
+        searchText={props.searchText}
+        searchCallback={props.searchCallback}
+      ></SearchBox>
+      <Button
+        text={'Invoke error'}
+        callback={onInvokeErrorClickHandler}
+      ></Button>
+    </header>
+  );
+};
 
 export default Header;

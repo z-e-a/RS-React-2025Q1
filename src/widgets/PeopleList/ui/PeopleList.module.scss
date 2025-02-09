@@ -1,12 +1,16 @@
 .main {
-  flex-grow: 1;
   width: 100%;
   padding-top: 30px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
   gap: 3rem;
+}
+
+.peopleList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 @media (prefers-color-scheme: light) {

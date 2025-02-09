@@ -2,6 +2,11 @@
   padding: 10px 15px;
   border: 1px dotted #e1e1e1;
   border-radius: 10px;
+
+  &._selected {
+    border-color: #666eff;
+    background-color: #666eff4d;
+  }
 }
 
 @media (prefers-color-scheme: light) {

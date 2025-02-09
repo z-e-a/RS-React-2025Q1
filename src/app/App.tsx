@@ -1,70 +1,106 @@
-import React from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-// import styles from "./App.module.scss";
 import { IPeople } from '../SWApi';
 import Header from '../widgets/Header';
 import PeopleList from '../widgets/PeopleList';
+import Paginator from '../widgets/Paginator';
+import { useLocalStorage } from './useLocalStorage';
+import { Outlet, useSearchParams } from 'react-router-dom';
 import Loader from '../shared/Loader';
 
-interface IAppState {
-  searchText: string;
-  apiUrl: string;
-  people: IPeople[];
-  isLoading: boolean;
-}
+function App() {
+  const [searchParams, setSearchParams] = useSearchParams();
 
-class App extends React.Component<object, IAppState> {
-  declare state: IAppState;
+  const [isLoading, setIsLoading] = useState(true);
 
-  constructor(props: object) {
-    super(props);
-    const storedSearchText = localStorage.getItem('rss-react_searchText');
+  const [searchText, setSearchText] = useLocalStorage('searchText', '');
 
-    this.state = {
-      searchText: storedSearchText ?? '',
-      apiUrl: import.meta.env.VITE_API_URL,
-      people: [],
-      isLoading: true,
-    };
-    this.fetchData = this.fetchData.bind(this);
-    this.search = this.search.bind(this);
+  const paramsSearchText = searchParams.get('text') ?? '';
+
+  if (paramsSearchText && paramsSearchText !== searchText) {
+    setSearchText(paramsSearchText);
   }
 
-  componentDidMount() {
-    this.setState({ isLoading: false });
-    this.fetchData();
-  }
+  const [people, setPeople] = useState<IPeople[]>([]);
+  const [totalItemsCount, setTotalItemsCount] = useState<number>(-1);
+  let currentPage = searchParams.get('page') ?? '1';
 
-  async search(text: string) {
-    const trimmedText = text.trim();
-    await this.setState({ searchText: trimmedText });
-    localStorage.setItem('rss-react_searchText', trimmedText);
-    this.fetchData();
-  }
+  const search = useCallback(
+    (text: string) => {
+      const trimmedText = text.trim();
+      setSearchText(trimmedText);
 
-  fetchData() {
-    this.setState({ isLoading: true });
-    fetch(`${this.state.apiUrl}?search=${this.state.searchText.trim()}`)
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({ people: data.results });
-        this.setState({ isLoading: false });
-      })
-      .catch((error) => console.log(error));
-  }
+      const redusedSearchParams: URLSearchParams = new URLSearchParams();
+      searchParams.forEach((v, k) => {
+        if (k !== 'text' && k !== 'page') {
+          redusedSearchParams.set(k, v);
+        }
+      });
 
-  render() {
-    return (
-      <>
-        {this.state.isLoading && <Loader />}
-        <Header
-          searchText={this.state.searchText}
-          searchCallback={this.search}
-        ></Header>
-        <PeopleList people={this.state.people}></PeopleList>
-      </>
-    );
-  }
+      if (trimmedText) {
+        redusedSearchParams.set('text', trimmedText);
+      }
+      const url = new URL(import.meta.env.VITE_API_URL);
+      if (trimmedText) {
+        url.searchParams.set('search', trimmedText);
+      }
+
+      const pageSize = import.meta.env.VITE_PAGITAOR_PAGE_SIZE ?? 10;
+      url.searchParams.set('limit', String(pageSize));
+
+      const preFlightUrl = new URL(url);
+      preFlightUrl.searchParams.set('page', '1');
+
+      fetch(preFlightUrl.toString())
+        .then((response) => response.json())
+        .then((preFlightData) => {
+          const pagesCount = Math.ceil(preFlightData.count / pageSize);
+          if (parseInt(currentPage) > pagesCount) {
+            currentPage = String(pagesCount);
+          }
+          if (currentPage !== '1') {
+            redusedSearchParams.set('page', currentPage);
+          }
+
+          setSearchParams(redusedSearchParams);
+
+          if (currentPage !== '1') {
+            url.searchParams.set('page', String(currentPage));
+          }
+
+          fetch(url.toString())
+            .then((response) => response.json())
+            .then((data) => {
+              setPeople(data.results);
+              setTotalItemsCount(data.count);
+              setIsLoading(false);
+            })
+            .catch((error) => console.log(error));
+        })
+        .catch((error) => console.log(error));
+    },
+    [setSearchText]
+  );
+
+  useEffect(() => {
+    setIsLoading(true);
+    search(searchText);
+  }, [currentPage]);
+
+  return (
+    <>
+      {isLoading && <Loader />}
+      <Header searchText={searchText} searchCallback={search}></Header>
+      <Paginator
+        currentPage={parseInt(currentPage) ?? 1}
+        pageSize={import.meta.env.VITE_PAGITAOR_PAGE_SIZE}
+        totalItemsCount={totalItemsCount}
+      />
+      <PeopleList people={people} isLoading={isLoading}>
+        <Outlet />
+      </PeopleList>
+    </>
+  );
 }
 
 export default App;
