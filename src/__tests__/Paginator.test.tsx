@@ -28,7 +28,7 @@ describe('Paginator tests', () => {
     expect(nextBnt.textContent).toMatch('>');
 
     await nextBnt.click();
-    const sixthBnt = screen.getByText('3');
+    const sixthBnt = screen.getByText('6');
     expect(sixthBnt).toBeDefined();
     component.unmount();
   });
