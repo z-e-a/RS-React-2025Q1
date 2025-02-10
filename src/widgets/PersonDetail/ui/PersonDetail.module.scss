@@ -1,0 +1,52 @@
+.detailContainer {
+  position: relative;
+  width: 30vw;
+}
+
+.detailCaption {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.detailEntry {
+  list-style: none;
+  text-align: left;
+}
+
+.fieldName {
+  font-weight: bold;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  width: 2rem;
+  height: 2rem;
+  border-width: 1px;
+  border-color: #ffffff;
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 50%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 80%;
+    height: 1px;
+    background-color: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+}

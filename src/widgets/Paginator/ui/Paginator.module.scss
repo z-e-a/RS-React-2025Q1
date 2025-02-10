@@ -1,0 +1,27 @@
+.prodPaginatorContrainer {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.pageButton {
+  width: 35px;
+  height: 35px;
+  margin-left: 10px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #d0adf0;
+  box-sizing: border-box;
+
+  &:hover {
+    border-width: 2px;
+    border-color: #646cff;
+  }
+}
+
+.currentPageButton {
+  background-color: #646cff;
+  color: #d0adf0;
+}
