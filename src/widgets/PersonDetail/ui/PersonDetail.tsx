@@ -31,7 +31,6 @@ const PeopleDetail = () => {
         });
       }
     );
-    // })
   }, [id]);
 
   if (isLoading) {

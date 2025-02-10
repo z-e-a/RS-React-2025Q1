@@ -9,26 +9,8 @@ interface IProps {
 }
 
 const Paginator = ({ currentPage, pageSize, totalItemsCount }: IProps) => {
-  // console.log('currentPage from Paginator:::', currentPage);
-
   const portionSize = import.meta.env.VITE_PAGITAOR_PORTION_SIZE;
-
-  // console.log('portionSize', portionSize);
-  // console.log(
-  //   'Math.ceil(currentPage / portionSize',
-  //   Math.ceil(currentPage / portionSize)
-  // );
-
   const [portionNumber, setPortionNumber] = useState<number>(1);
-  // const [portionNumber, setPortionNumber] = useState<number>(
-  //   Math.ceil(currentPage / portionSize)
-  // );
-
-  if (portionNumber != Math.ceil(currentPage / portionSize)) {
-    setPortionNumber(Math.ceil(currentPage / portionSize));
-  }
-
-  // console.log('portionNumber', portionNumber);
 
   const pagesCount: number = Math.ceil(totalItemsCount / pageSize);
   const pages: number[] = Array.from(
