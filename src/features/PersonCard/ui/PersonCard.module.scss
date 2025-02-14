@@ -1,0 +1,45 @@
+.cardContainer {
+  position: relative;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+
+  &:visited,
+  &:hover,
+  &:active,
+  &:-webkit-any-link {
+    color: inherit;
+  }
+
+  &.light .card {
+    border-color: black;
+  }
+}
+
+.card {
+  padding: 10px 15px;
+  border: 1px dotted #e1e1e1;
+  border-radius: 10px;
+
+  &._selected {
+    border-color: #666eff;
+    background-color: #666eff4d;
+  }
+}
+
+.selectLabel {
+  position: absolute;
+  z-index: 10;
+  bottom: 0px;
+  right: 0px;
+  padding: 5px;
+
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--data-color-accent);
+    scale: 1.05;
+  }
+}

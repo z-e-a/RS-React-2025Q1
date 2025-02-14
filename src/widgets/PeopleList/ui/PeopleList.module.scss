@@ -1,0 +1,26 @@
+.main {
+  width: 100%;
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+
+  color: var(--data-color-light);
+  background-color: var(--data-color-dark);
+  border-radius: 10px;
+
+  &.light {
+    color: var(--data-color-dark);
+    background-color: var(--data-color-light);
+  }
+}
+
+.peopleList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (prefers-color-scheme: light) {
+}

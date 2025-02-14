@@ -1,0 +1,243 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Render App component without crashing 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="_overlay_19615b"
+      >
+        <div
+          class="_spinner_19615b"
+        />
+      </div>
+      <div
+        class="_wrapper_6659cc "
+        data-testid="wrapper"
+      >
+        <header
+          class="_header_f032e3 "
+        >
+          <form>
+            <input
+              class="_searchInput_db81dc "
+              placeholder="type search text here..."
+              type="search"
+              value="lu"
+            />
+            <button
+              class="_button_4af785 "
+              type="submit"
+            >
+              search
+            </button>
+          </form>
+          <button
+            class="_button_4af785 "
+            type="button"
+          >
+            Invoke error
+          </button>
+          <label
+            class="_toggleContainer_84f95e "
+          >
+            <span>
+              dark
+            </span>
+            <input
+              class="_input_84f95e"
+              type="checkbox"
+            />
+            <span
+              class="_toggle_84f95e"
+            />
+            <span>
+              light
+            </span>
+          </label>
+        </header>
+        <div
+          class="_prodPaginatorContrainer_e1ee62 "
+          data-testid="container"
+        >
+          <a
+            class="_pageButton_e1ee62 _currentPageButton_e1ee62"
+            href="http://localhost:3000/?name=Luke+Skywalker&id=1&text=lu"
+          >
+            1
+          </a>
+        </div>
+        <div>
+          no items found...
+        </div>
+        <div
+          class="_wrapper_1f7c1c "
+        >
+          <span>
+            0 items selected
+          </span>
+          <button
+            class="_button_4af785 "
+            type="button"
+          >
+            Unselect all
+          </button>
+          <button
+            class="_button_4af785 "
+            type="button"
+          >
+            Download
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="_overlay_19615b"
+    >
+      <div
+        class="_spinner_19615b"
+      />
+    </div>
+    <div
+      class="_wrapper_6659cc "
+      data-testid="wrapper"
+    >
+      <header
+        class="_header_f032e3 "
+      >
+        <form>
+          <input
+            class="_searchInput_db81dc "
+            placeholder="type search text here..."
+            type="search"
+            value="lu"
+          />
+          <button
+            class="_button_4af785 "
+            type="submit"
+          >
+            search
+          </button>
+        </form>
+        <button
+          class="_button_4af785 "
+          type="button"
+        >
+          Invoke error
+        </button>
+        <label
+          class="_toggleContainer_84f95e "
+        >
+          <span>
+            dark
+          </span>
+          <input
+            class="_input_84f95e"
+            type="checkbox"
+          />
+          <span
+            class="_toggle_84f95e"
+          />
+          <span>
+            light
+          </span>
+        </label>
+      </header>
+      <div
+        class="_prodPaginatorContrainer_e1ee62 "
+        data-testid="container"
+      >
+        <a
+          class="_pageButton_e1ee62 _currentPageButton_e1ee62"
+          href="http://localhost:3000/?name=Luke+Skywalker&id=1&text=lu"
+        >
+          1
+        </a>
+      </div>
+      <div>
+        no items found...
+      </div>
+      <div
+        class="_wrapper_1f7c1c "
+      >
+        <span>
+          0 items selected
+        </span>
+        <button
+          class="_button_4af785 "
+          type="button"
+        >
+          Unselect all
+        </button>
+        <button
+          class="_button_4af785 "
+          type="button"
+        >
+          Download
+        </button>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "store": {
+    "@@observable": [Function],
+    "dispatch": [Function],
+    "getState": [Function],
+    "replaceReducer": [Function],
+    "subscribe": [Function],
+  },
+  "unmount": [Function],
+}
+`;
