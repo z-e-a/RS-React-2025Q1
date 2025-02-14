@@ -1,6 +1,10 @@
 import { afterAll, afterEach, beforeAll, expect, test } from 'vitest';
-import { render, screen, waitFor } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import PeopleDetail from '../widgets/PersonDetail';
+import styles from '../widgets/PersonDetail/ui/PersonDetail.module.scss';
+import loaderStyles from '../shared/Loader/ui/Loader.module.scss';
+import { ThemeContext } from '../app/Contexts';
+import { renderWithProviders } from './test-utils';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { setupServer } from 'msw/node';
 import { http, HttpResponse } from 'msw';
@@ -17,21 +21,45 @@ afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
 test('Render PeopleDetail without crash', async () => {
-  const component = render(
-    <MemoryRouter
-      initialEntries={['/search/detail?name=Luke+Skywalker&id=1&text=lu']}
-    >
-      <Routes>
-        <Route path="*" element={<PeopleDetail />} />
-      </Routes>
-    </MemoryRouter>
+  let component = renderWithProviders(
+    <ThemeContext.Provider value={'dark'}>
+      <MemoryRouter
+        initialEntries={['/search/detail?name=Luke+Skywalker&id=1&text=lu']}
+      >
+        <Routes>
+          <Route path="*" element={<PeopleDetail />} />
+        </Routes>
+      </MemoryRouter>
+    </ThemeContext.Provider>
   );
-  expect(screen.getByRole('heading').textContent).toEqual('Loading...');
+
+  const overlay = component.container.querySelector('div');
+  expect(overlay?.classList).toContain(loaderStyles.overlay);
+  const spinner = overlay?.querySelector('div');
+  expect(spinner?.classList).toContain(loaderStyles.spinner);
 
   await waitFor(() => {
-    const details = screen.getByTestId('details');
-    expect(details?.querySelector('h2')?.textContent).toEqual('Luke Skywalker');
+    const container = screen.getByTestId('container');
+    expect(container.classList).not.toContain(styles.light);
   });
 
+  component.unmount();
+
+  component = renderWithProviders(
+    <ThemeContext.Provider value={'light'}>
+      <MemoryRouter
+        initialEntries={['/search/detail?name=Luke+Skywalker&id=1&text=lu']}
+      >
+        <Routes>
+          <Route path="*" element={<PeopleDetail />} />
+        </Routes>
+      </MemoryRouter>
+    </ThemeContext.Provider>
+  );
+
+  await waitFor(() => {
+    const container = screen.getByTestId('container');
+    expect(container.classList).toContain(styles.light);
+  });
   component.unmount();
 });

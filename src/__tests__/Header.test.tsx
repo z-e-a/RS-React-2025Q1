@@ -1,29 +1,48 @@
-import { describe, expect, test } from 'vitest';
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { describe, expect, test, vi } from 'vitest';
+import { act, fireEvent, screen } from '@testing-library/react';
 import Header from '../widgets/Header';
+import styles from '../widgets/Header/ui/Header.module.scss';
+import { ThemeContext } from '../app/Contexts';
+import { renderWithProviders } from './test-utils';
 
 describe('Header tests', () => {
+  vi.spyOn(console, 'error').mockImplementation(() => null);
   test('Render Header without crash', async () => {
-    const mockedSearchCallback = vi.fn();
-    const component = render(
-      <Header searchText={''} searchCallback={mockedSearchCallback} />
+    const mockedCallback = vi.fn();
+
+    let component = renderWithProviders(
+      <ThemeContext.Provider value={'light'}>
+        <Header toggleThemeCallback={mockedCallback} />
+      </ThemeContext.Provider>
     );
 
-    const searchBtn = screen.getByText('search');
-    fireEvent.click(searchBtn);
-    expect(mockedSearchCallback).toBeCalledTimes(1);
+    const article = screen.getByRole('banner');
+    expect(article.classList).toContain(styles.light);
+
+    let checkbox = screen.getByRole('checkbox');
+    expect(checkbox).toHaveProperty('checked', true);
+    fireEvent.click(checkbox);
+    expect(mockedCallback).toHaveBeenCalledOnce();
+    component.unmount();
+
+    try {
+      component = renderWithProviders(
+        <ThemeContext.Provider value={'dark'}>
+          <Header toggleThemeCallback={mockedCallback} />
+        </ThemeContext.Provider>
+      );
+      checkbox = screen.getByRole('checkbox');
+      expect(checkbox).toHaveProperty('checked', false);
+
+      const errorBtn = screen.getByText('Invoke error');
+
+      act(() => {
+        errorBtn.click();
+      });
+    } catch (error) {
+      expect(error).toEqual(new Error('Forced error'));
+    }
     component.unmount();
   });
-
-  test('Render Header with crash', async () => {
-    const component = render(
-      <Header searchText={''} searchCallback={() => {}} />
-    );
-
-    act(async () => {
-      const errBtn = component.getByText('Invoke error');
-      expect(errBtn).instanceOf(HTMLButtonElement);
-      errBtn.click();
-    });
-  });
+  vi.clearAllMocks();
 });
