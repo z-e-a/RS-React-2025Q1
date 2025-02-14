@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Button from '../shared/Button';
 
 interface IErrProps {
@@ -11,6 +11,8 @@ interface IErrState {
 
 class ErrorBoundary extends React.Component<IErrProps, IErrState> {
   declare state: Readonly<IErrState>;
+
+  declare props: Readonly<IErrProps>;
 
   constructor(props: IErrProps) {
     super(props);

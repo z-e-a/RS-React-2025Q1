@@ -5,6 +5,15 @@
   justify-content: center;
   align-items: flex-start;
   gap: 3rem;
+
+  color: var(--data-color-light);
+  background-color: var(--data-color-dark);
+  border-radius: 10px;
+
+  &.light {
+    color: var(--data-color-dark);
+    background-color: var(--data-color-light);
+  }
 }
 
 .peopleList {

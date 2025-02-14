@@ -7,7 +7,11 @@
   height: 1.8rem;
   padding: 5px;
   font-size: 1.2em;
-}
+  color: var(--data-color-light);
+  background-color: var(--data-color-medium-dark);
 
-@media (prefers-color-scheme: light) {
+  &.light {
+    color: var(--data-color-dark);
+    background-color: var(--data-color-medium-light);
+  }
 }

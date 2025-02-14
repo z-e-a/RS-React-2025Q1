@@ -1,6 +1,13 @@
 .detailContainer {
   position: relative;
   width: 30vw;
+  border-radius: 10px;
+  border: 1px dotted #e1e1e1;
+  padding: 5px;
+
+  &.light {
+    border-color: black;
+  }
 }
 
 .detailCaption {
@@ -17,10 +24,14 @@
   font-weight: bold;
 }
 
+.fieldValue {
+  overflow: ellipsis;
+}
+
 .closeBtn {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 3px;
+  right: 3px;
   padding: 5px;
   width: 2rem;
   height: 2rem;

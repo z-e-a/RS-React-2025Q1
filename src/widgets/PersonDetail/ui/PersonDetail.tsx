@@ -1,13 +1,18 @@
 import styles from './PersonDetail.module.scss';
 import { IPeople } from '../../../SWApi';
 import { Link, useSearchParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { ThemeContext } from '../../../app/Contexts';
+import { usePersonQuery } from '../../../app/swApi';
+import Loader from '../../../shared/Loader';
 
 const PeopleDetail = () => {
-  const [person, setPerson] = useState<IPeople | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-
+  const theme = useContext(ThemeContext);
   const [searchParams] = useSearchParams();
+  const id = searchParams.get('id') ?? '0';
+  const { data, isLoading } = usePersonQuery({ id });
+
+  const person: IPeople = data ?? ({} as IPeople);
 
   const redusedSearchParams: URLSearchParams = new URLSearchParams();
   searchParams.forEach((v, k) => {
@@ -20,34 +25,27 @@ const PeopleDetail = () => {
     window.location.origin
   );
 
-  const id = searchParams.get('id');
-
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_API_URL}/${searchParams.get('id')}`).then(
-      (response) => {
-        response.json().then((person) => {
-          setPerson(person);
-          setIsLoading(false);
-        });
-      }
-    );
-  }, [id]);
-
   if (isLoading) {
-    return <h3>Loading...</h3>;
-  } else if (!person) {
-    return <h3>no data...</h3>;
+    return <Loader />;
   }
 
   return (
-    <aside className={styles.detailContainer} data-testid="details">
+    <div
+      className={[
+        styles.detailContainer,
+        theme == 'light' ? styles.light : '',
+      ].join(' ')}
+      data-testid="container"
+    >
       <h2 className={styles.detailCaption}>{person.name}</h2>
       <ul>
         {Object.keys(person).map((k) => {
           return (
             <li className={styles.detailEntry} key={k}>
               <span className={styles.fieldName}>{k}: </span>
-              <span>{(person as unknown as Record<string, string>)[k]}</span>
+              <span className={styles.fieldValue}>
+                {(person as unknown as Record<string, string>)[k]}
+              </span>
             </li>
           );
         })}
@@ -57,7 +55,7 @@ const PeopleDetail = () => {
           title="close"
         ></Link>
       </ul>
-    </aside>
+    </div>
   );
 };
 

@@ -1,22 +1,31 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from './Paginator.module.scss';
 import { Link, useSearchParams } from 'react-router-dom';
+import { ThemeContext } from '../../../app/Contexts';
+import {
+  IPeopleViewState,
+  setCurrentPage,
+} from '../../../entities/people/model/peopleViewSlice';
+import { RootStateType, useAppSelector } from '../../../app/store';
+import { useDispatch } from 'react-redux';
 
-interface IProps {
-  currentPage: number;
-  pageSize: number;
-  totalItemsCount: number;
-}
+const Paginator = () => {
+  const theme = useContext(ThemeContext);
 
-const Paginator = ({ currentPage, pageSize, totalItemsCount }: IProps) => {
-  const portionSize = import.meta.env.VITE_PAGITAOR_PORTION_SIZE;
+  const dispatch = useDispatch();
+  const { totalItemsCount, currentPage }: IPeopleViewState = useAppSelector<
+    RootStateType,
+    IPeopleViewState
+  >((store): IPeopleViewState => store.peopleView);
+  const pageSize = import.meta.env.VITE_PAGITAOR_PAGE_SIZE;
+
   const [portionNumber, setPortionNumber] = useState<number>(1);
-
   const pagesCount: number = Math.ceil(totalItemsCount / pageSize);
   const pages: number[] = Array.from(
     { length: pagesCount },
     (_, index: number): number => index + 1
   );
+  const portionSize = import.meta.env.VITE_PAGITAOR_PORTION_SIZE;
   const portionCount: number = Math.ceil(pagesCount / portionSize);
   const leftPortionPageNumber: number = (portionNumber - 1) * portionSize + 1;
   const rightPortionPageNumber: number = portionNumber * portionSize;
@@ -35,7 +44,13 @@ const Paginator = ({ currentPage, pageSize, totalItemsCount }: IProps) => {
   );
 
   return (
-    <div className={styles.prodPaginatorContrainer} data-testid="container">
+    <div
+      className={[
+        styles.prodPaginatorContrainer,
+        theme == 'light' ? styles.light : '',
+      ].join(' ')}
+      data-testid="container"
+    >
       {portionNumber > 1 && (
         <button
           className={styles.pageButton}
@@ -64,6 +79,10 @@ const Paginator = ({ currentPage, pageSize, totalItemsCount }: IProps) => {
                 p === currentPage ? styles.currentPageButton : '',
               ].join(' ')}
               key={p}
+              onClick={(e: React.SyntheticEvent<HTMLAnchorElement>) => {
+                e.preventDefault();
+                dispatch(setCurrentPage({ currentPage: p }));
+              }}
             >
               {p}
             </Link>

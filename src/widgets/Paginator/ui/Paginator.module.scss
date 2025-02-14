@@ -2,6 +2,16 @@
   display: flex;
   gap: 2rem;
   justify-content: center;
+  margin: 10px 0;
+
+  color: var(--data-color-light);
+  background-color: var(--data-color-dark);
+  border-radius: 10px;
+
+  &.light {
+    color: var(--data-color-dark);
+    background-color: var(--data-color-light);
+  }
 }
 
 .pageButton {

@@ -1,0 +1,25 @@
+.wrapper {
+  width: 400px;
+  height: 50px;
+  position: fixed;
+  z-index: 100;
+  top: 100%;
+  left: calc(50% - 200px);
+  padding: 10px 20px;
+  color: var(--data-color-light);
+  background-color: rgba($color: #1100ff, $alpha: 0.6);
+  border-radius: 20px;
+  transition: all 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  & > button {
+    font-size: small;
+  }
+}
+
+.visible {
+  top: calc(100% - 80px);
+}
