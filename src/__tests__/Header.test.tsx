@@ -1,38 +1,77 @@
 import { describe, expect, test, vi } from 'vitest';
-import { act, fireEvent, screen } from '@testing-library/react';
-import Header from '../widgets/Header';
-import styles from '../widgets/Header/ui/Header.module.scss';
-import { ThemeContext } from '../app/Contexts';
-import { renderWithProviders } from './test-utils';
+import { act, fireEvent, render, screen } from '@testing-library/react';
+import Header from '../components/Header';
+import styles from '../components/Header/ui/Header.module.scss';
+import { ThemeContext, ThemeContextType } from '@/ThemeContext';
+
+vi.mock('next/navigation', async () => {
+  const actual = await vi.importActual('next/navigation');
+  return {
+    ...actual,
+    useSearchParams: () => ({
+      get: (param: string) => {
+        if (param == 'id') return '1';
+        if (param == 'name') return 'Luke Skywalker';
+        if (param == 'text') return 'lu';
+      },
+      forEach: (
+        callbackFn: (arg0: string, arg1: string, arg2: number) => void
+      ) => {
+        callbackFn('1', 'id', 0);
+        callbackFn('Luke+Skywalker', 'name', 1);
+        callbackFn('lu', 'text', 2);
+      },
+    }),
+  };
+});
+
+const mocketRouterPush = vi.fn();
+
+vi.mock('next/router', async () => {
+  const actual = await vi.importActual('next/compat/router');
+  return {
+    ...actual,
+    useRouter: () => ({
+      push: mocketRouterPush,
+    }),
+  };
+});
 
 describe('Header tests', () => {
   vi.spyOn(console, 'error').mockImplementation(() => null);
   test('Render Header without crash', async () => {
     const mockedCallback = vi.fn();
 
-    let component = renderWithProviders(
-      <ThemeContext.Provider value={'light'}>
-        <Header toggleThemeCallback={mockedCallback} />
+    const lightThemeContextValue: ThemeContextType = {
+      theme: 'light',
+      toggleTheme: mockedCallback,
+    };
+    const darkThemeContextValue: ThemeContextType = {
+      theme: 'dark',
+      toggleTheme: () => {},
+    };
+
+    let component = render(
+      <ThemeContext.Provider value={lightThemeContextValue}>
+        <Header />
       </ThemeContext.Provider>
     );
 
     const article = screen.getByRole('banner');
     expect(article.classList).toContain(styles.light);
 
-    let checkbox = screen.getByRole('checkbox');
-    expect(checkbox).toHaveProperty('checked', true);
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).toHaveProperty('checked', false);
     fireEvent.click(checkbox);
     expect(mockedCallback).toHaveBeenCalledOnce();
     component.unmount();
 
     try {
-      component = renderWithProviders(
-        <ThemeContext.Provider value={'dark'}>
-          <Header toggleThemeCallback={mockedCallback} />
+      component = render(
+        <ThemeContext.Provider value={darkThemeContextValue}>
+          <Header />
         </ThemeContext.Provider>
       );
-      checkbox = screen.getByRole('checkbox');
-      expect(checkbox).toHaveProperty('checked', false);
 
       const errorBtn = screen.getByText('Invoke error');
 

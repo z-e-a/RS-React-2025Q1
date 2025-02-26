@@ -1,16 +1,40 @@
-import { describe, expect, test } from 'vitest';
-import { screen } from '@testing-library/react';
-import PeopleList from '../widgets/PeopleList';
-import styles from '../widgets/PeopleList/ui/PeopleList.module.scss';
-import { renderWithProviders } from './test-utils';
-import { ThemeContext } from '../app/Contexts';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { describe, expect, test, vi } from 'vitest';
+import { render, screen } from '@testing-library/react';
+import PeopleList from '../components/PeopleList';
+import styles from '../components/PeopleList/ui/PeopleList.module.scss';
+import { ThemeContext, ThemeContextType } from '@/ThemeContext';
 import { testPeopleArray2 } from './mockData';
+
+vi.mock('next/navigation', async () => {
+  const actual = await vi.importActual('next/navigation');
+  return {
+    ...actual,
+    useSearchParams: () => ({
+      get: (param: string) => {
+        if (param == 'id') return '1';
+        if (param == 'name') return 'Luke Skywalker';
+        if (param == 'text') return 'lu';
+      },
+      forEach: (
+        callbackFn: (arg0: string, arg1: string, arg2: number) => void
+      ) => {
+        callbackFn('1', 'id', 0);
+        callbackFn('Luke+Skywalker', 'name', 1);
+        callbackFn('lu', 'text', 2);
+      },
+    }),
+  };
+});
 
 describe('PeopleList tests', () => {
   test('PeopleList without data', async () => {
-    const component = renderWithProviders(
-      <ThemeContext.Provider value={'light'}>
+    const lightThemeContextValue: ThemeContextType = {
+      theme: 'light',
+      toggleTheme: () => {},
+    };
+
+    const component = render(
+      <ThemeContext.Provider value={lightThemeContextValue}>
         <PeopleList people={[]}>
           <article>children</article>
         </PeopleList>
@@ -24,22 +48,16 @@ describe('PeopleList tests', () => {
   });
 
   test('PeopleList with data', async () => {
-    const component = renderWithProviders(
-      <ThemeContext.Provider value={'dark'}>
-        <MemoryRouter
-          initialEntries={['/search/detail?name=Luke+Skywalker&id=1&text=i']}
-        >
-          <Routes>
-            <Route
-              path="*"
-              element={
-                <PeopleList people={testPeopleArray2}>
-                  <footer>children</footer>
-                </PeopleList>
-              }
-            />
-          </Routes>
-        </MemoryRouter>
+    const darkThemeContextValue: ThemeContextType = {
+      theme: 'dark',
+      toggleTheme: () => {},
+    };
+
+    const component = render(
+      <ThemeContext.Provider value={darkThemeContextValue}>
+        <PeopleList people={testPeopleArray2}>
+          <article>children</article>
+        </PeopleList>
       </ThemeContext.Provider>
     );
 

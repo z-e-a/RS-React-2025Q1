@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest';
 import { render } from '@testing-library/react';
-import Loader from '../shared/Loader';
-import styles from '../shared/Loader/ui/Loader.module.scss';
+import Loader from '../components/Loader';
+import styles from '../components/Loader/ui/Loader.module.scss';
 
 test('Render Loader without crash', async () => {
   const { container } = render(<Loader />);

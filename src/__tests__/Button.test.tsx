@@ -1,12 +1,19 @@
+import React from 'react';
 import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import Button from '../shared/Button';
-import { ThemeContext } from '../app/Contexts';
-import styles from '../shared/Button/ui/Button.module.scss';
+import Button from '../components/Button';
+import { ThemeContext } from '../ThemeContext';
+import styles from '../components/Button/ui/Button.module.scss';
+import type { ThemeContextType } from '../ThemeContext';
+
+const themeContextValue: ThemeContextType = {
+  theme: 'dark',
+  toggleTheme: () => {},
+};
 
 test('Render Button without props', async () => {
   render(
-    <ThemeContext.Provider value={'dark'}>
+    <ThemeContext.Provider value={themeContextValue}>
       <Button text={'test button 1'} />
     </ThemeContext.Provider>
   );
@@ -20,7 +27,7 @@ test('Render Button without props', async () => {
 
 test('Render Button with props', async () => {
   render(
-    <ThemeContext.Provider value={'light'}>
+    <ThemeContext.Provider value={{ ...themeContextValue, theme: 'light' }}>
       <Button text={'test button 2'} submit />
     </ThemeContext.Provider>
   );

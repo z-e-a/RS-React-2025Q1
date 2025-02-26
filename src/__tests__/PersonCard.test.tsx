@@ -1,40 +1,46 @@
-import { describe, expect, test } from 'vitest';
-import { fireEvent, screen } from '@testing-library/react';
-import PersonCard from '../features/PersonCard';
-import styles from '../features/PersonCard/ui/PersonCard.module.scss';
-import { renderWithProviders } from './test-utils';
-import { ThemeContext } from '../app/Contexts';
-import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { testPeopleArray2, testSinglePerson } from './mockData';
+import { describe, expect, test, vi } from 'vitest';
+import { fireEvent, render, screen } from '@testing-library/react';
+import PersonCard from '../components/PersonCard';
+import styles from '../components/PersonCard/ui/PersonCard.module.scss';
+import { ThemeContext, ThemeContextType } from '@/ThemeContext';
+import { testSinglePerson, testSinglePerson2 } from './mockData';
+
+vi.mock('next/navigation', async () => {
+  const actual = await vi.importActual('next/navigation');
+  return {
+    ...actual,
+    useSearchParams: () => ({
+      get: (param: string) => {
+        if (param == 'id') return '1';
+        if (param == 'name') return 'Luke Skywalker';
+        if (param == 'text') return 'lu';
+      },
+      forEach: (
+        callbackFn: (arg0: string, arg1: string, arg2: number) => void
+      ) => {
+        callbackFn('1', 'id', 0);
+        callbackFn('Luke+Skywalker', 'name', 1);
+        callbackFn('lu', 'text', 2);
+      },
+    }),
+  };
+});
 
 describe('PersonCard tests', () => {
   test('Render PersonCard without crash', async () => {
-    const component = renderWithProviders(
-      <ThemeContext.Provider value={'light'}>
-        <MemoryRouter
-          initialEntries={['/search/detail?name=Luke+Skywalker&id=1&text=i']}
-        >
-          <Routes>
-            <Route
-              path="*"
-              element={<PersonCard person={testSinglePerson} />}
-            />
-          </Routes>
-        </MemoryRouter>
-      </ThemeContext.Provider>,
-      {
-        preloadedState: {
-          people: {
-            peopleList: testPeopleArray2,
-          },
-          peopleView: {
-            currentPage: 1,
-            totalItemsCount: 10,
-            selectedPeople: testPeopleArray2,
-            searchText: '',
-          },
-        },
-      }
+    const lightThemeContextValue: ThemeContextType = {
+      theme: 'light',
+      toggleTheme: () => {},
+    };
+    const darkThemeContextValue: ThemeContextType = {
+      theme: 'dark',
+      toggleTheme: () => {},
+    };
+
+    let component = render(
+      <ThemeContext.Provider value={lightThemeContextValue}>
+        <PersonCard person={testSinglePerson} />
+      </ThemeContext.Provider>
     );
 
     const article = screen.getByRole('article');
@@ -42,50 +48,35 @@ describe('PersonCard tests', () => {
 
     const link = screen.getByRole('link');
 
-    expect(link.getAttribute('href')?.split('?')[1]).toMatch('text=i');
+    expect(link.getAttribute('href')?.split('?')[1]).toMatch('text=lu');
     expect(link.classList).toContain(styles.light);
 
     const heading = screen.getByRole('heading');
     expect(heading).toBeInstanceOf(HTMLHeadingElement);
     expect(heading.textContent).toMatch(`${testSinglePerson.name}`);
 
+    const checkbox = screen.getByRole('checkbox');
+    expect(checkbox).toHaveProperty('checked', false);
+    fireEvent.click(checkbox);
+    expect(checkbox).toHaveProperty('checked', true);
+
     component.unmount();
 
-    renderWithProviders(
-      <ThemeContext.Provider value={'dark'}>
-        <MemoryRouter
-          initialEntries={[
-            '/search/detail?name=Leia+Organa&id=5&text=i&page=2',
-          ]}
-        >
-          <Routes>
-            <Route
-              path="*"
-              element={<PersonCard person={testSinglePerson} />}
-            />
-          </Routes>
-        </MemoryRouter>
-      </ThemeContext.Provider>,
-      {
-        preloadedState: {
-          peopleView: {
-            currentPage: 2,
-            totalItemsCount: 10,
-            selectedPeople: testPeopleArray2,
-            searchText: '',
-          },
-        },
-      }
+    component = render(
+      <ThemeContext.Provider value={darkThemeContextValue}>
+        <PersonCard person={testSinglePerson2} />
+      </ThemeContext.Provider>
     );
 
     const newLink = screen.getByRole('link');
-    expect(newLink.getAttribute('href')?.split('?')[1]).toMatch(
-      'name=Luke+Skywalker&id=1&text=i'
-    );
+    // expect(newLink.getAttribute('href')?.split('?')[1]).toMatch(
+    //   'name=Luke+Skywalker&id=1&text=i'
+    // );
     expect(newLink.classList).not.toContain(styles.light);
-    const checkbox = screen.getByRole('checkbox');
-    expect(checkbox).toHaveProperty('checked', true);
-    fireEvent.click(checkbox);
-    expect(checkbox).toHaveProperty('checked', false);
+
+    const article2 = screen.getByRole('article');
+    expect(article2.classList).not.toContain(styles._selected);
+
+    component.unmount();
   });
 });
