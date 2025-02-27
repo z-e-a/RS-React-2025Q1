@@ -2,7 +2,8 @@ import { describe, expect, test, vi } from 'vitest';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import Header from '../components/Header';
 import styles from '../components/Header/ui/Header.module.scss';
-import { ThemeContext, ThemeContextType } from '@/ThemeContext';
+import { ThemeContext } from '@/ThemeContext';
+import { darkThemeContextValue, lightThemeContextValue } from './test-utils';
 
 vi.mock('next/navigation', async () => {
   const actual = await vi.importActual('next/navigation');
@@ -25,14 +26,14 @@ vi.mock('next/navigation', async () => {
   };
 });
 
-const mocketRouterPush = vi.fn();
+const mockedRouterPush = vi.fn();
 
 vi.mock('next/router', async () => {
   const actual = await vi.importActual('next/compat/router');
   return {
     ...actual,
     useRouter: () => ({
-      push: mocketRouterPush,
+      push: mockedRouterPush,
     }),
   };
 });
@@ -40,17 +41,6 @@ vi.mock('next/router', async () => {
 describe('Header tests', () => {
   vi.spyOn(console, 'error').mockImplementation(() => null);
   test('Render Header without crash', async () => {
-    const mockedCallback = vi.fn();
-
-    const lightThemeContextValue: ThemeContextType = {
-      theme: 'light',
-      toggleTheme: mockedCallback,
-    };
-    const darkThemeContextValue: ThemeContextType = {
-      theme: 'dark',
-      toggleTheme: () => {},
-    };
-
     let component = render(
       <ThemeContext.Provider value={lightThemeContextValue}>
         <Header />
@@ -63,7 +53,7 @@ describe('Header tests', () => {
     const checkbox = screen.getByRole('checkbox');
     expect(checkbox).toHaveProperty('checked', false);
     fireEvent.click(checkbox);
-    expect(mockedCallback).toHaveBeenCalledOnce();
+    expect(lightThemeContextValue.toggleTheme).toHaveBeenCalledOnce();
     component.unmount();
 
     try {

@@ -4,7 +4,6 @@ import styles from './Paginator.module.scss';
 import { ThemeContext } from '../../../ThemeContext';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import React from 'react';
 import { PagingContext } from '@/PagingContext';
 
 const Paginator = () => {
@@ -32,17 +31,17 @@ const Paginator = () => {
 
   const searchParams = useSearchParams();
 
-  const redusedSearchParams: URLSearchParams = new URLSearchParams();
+  const reducedSearchParams: URLSearchParams = new URLSearchParams();
   searchParams.forEach((v, k) => {
     if (k !== 'page') {
-      redusedSearchParams.set(k, v);
+      reducedSearchParams.set(k, v);
     }
   });
 
   const currentPage = parseInt(searchParams.get('page') || '1');
 
   const baseUrl = new URL(
-    `${'search'}?${redusedSearchParams.toString()}`,
+    `${'search'}?${reducedSearchParams.toString()}`,
     'http://localhost:3000'
   );
 
@@ -53,7 +52,7 @@ const Paginator = () => {
   return (
     <div
       className={[
-        styles.prodPaginatorContrainer,
+        styles.prodPaginatorContainer,
         themeContext.theme == 'light' ? styles.light : '',
       ].join(' ')}
       data-testid="paginator"

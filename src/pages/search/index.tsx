@@ -18,19 +18,27 @@ export interface IPeopleResponse {
 export const getServerSideProps = (async (context) => {
   const searchText = context.query.text ?? '';
   const currentPage = context.query.page ?? '1';
-
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/people?search=${searchText}&page=${currentPage}`
-  );
-  const json: IPeopleResponse = await res.json();
-  return { props: json };
+  let res: Response;
+  try {
+    // const
+    res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/people?search=${searchText}&page=${currentPage}`
+    );
+    const json: IPeopleResponse = await res.json();
+    return { props: json };
+  } catch (error) {
+    console.log(error);
+  }
+  return { props: { count: 0, results: [] as IPeople[] } };
 }) satisfies GetServerSideProps<{ count: number; results: IPeople[] }>;
 
-export default function Search(props: { count: number; results: IPeople[] }) {
+export default function Search(
+  props: Readonly<{ count: number; results: IPeople[] }>
+) {
   const pagingState = useContext(PagingContext);
 
   const searchParams = useSearchParams();
-  const searchText = searchParams.get('text') || '';
+  const searchText = searchParams.get('text') ?? '';
 
   const router = useRouter();
 
@@ -53,7 +61,7 @@ export default function Search(props: { count: number; results: IPeople[] }) {
         router.replace(`/search?text=${value}`);
       }
     }
-  }, [searchText, pagingState, router]);
+  }, [searchText, pagingState, router, props.count]);
 
   return (
     <>

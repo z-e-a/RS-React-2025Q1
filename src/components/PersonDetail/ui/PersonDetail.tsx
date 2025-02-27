@@ -13,14 +13,14 @@ const PeopleDetail = () => {
   const id = searchParams.get('id') ?? '0';
   const [person, setPerson] = useState(null);
 
-  const redusedSearchParams: URLSearchParams = new URLSearchParams();
+  const reducedSearchParams: URLSearchParams = new URLSearchParams();
   searchParams.forEach((v, k) => {
     if (k !== 'name' && k !== 'id') {
-      redusedSearchParams.set(k, v);
+      reducedSearchParams.set(k, v);
     }
   });
   const backUrl = new URL(
-    `search?${redusedSearchParams.toString()}`,
+    `search?${reducedSearchParams.toString()}`,
     'http://localhost:3000'
   );
 

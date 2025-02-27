@@ -15,7 +15,6 @@ const Button = ({
   disabled = false,
   submit = false,
 }: IButtonProps) => {
-  // const theme = useContext(ThemeContext);
   const themeContext = useContext(ThemeContext);
 
   return (

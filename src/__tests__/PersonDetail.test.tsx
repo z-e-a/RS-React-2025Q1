@@ -6,7 +6,7 @@ import { ThemeContext } from '../ThemeContext';
 import { setupServer } from 'msw/node';
 import { http, HttpResponse } from 'msw';
 import { testResponseSinglePerson } from './mockData';
-import { ThemeContextType } from '@/ThemeContext';
+import { lightThemeContextValue } from './test-utils';
 const server = setupServer(
   http.get('https://swapi.dev/api/people/1', () => {
     return HttpResponse.json(testResponseSinglePerson);
@@ -38,14 +38,14 @@ vi.mock('next/navigation', async () => {
   };
 });
 
-const mocketRouterPush = vi.fn();
+const mockedRouterPush = vi.fn();
 
 vi.mock('next/router', async () => {
   const actual = await vi.importActual('next/compat/router');
   return {
     ...actual,
     useRouter: () => ({
-      push: mocketRouterPush,
+      push: mockedRouterPush,
     }),
   };
 });
@@ -55,11 +55,6 @@ process.env.NEXT_PUBLIC_API_URL = 'https://swapi.dev/api';
 vi.spyOn(console, 'error').mockImplementation(() => null);
 
 test('Render PeopleDetail without crash', async () => {
-  const lightThemeContextValue: ThemeContextType = {
-    theme: 'light',
-    toggleTheme: () => {},
-  };
-
   const component = render(
     <ThemeContext.Provider value={lightThemeContextValue}>
       <PeopleDetail />

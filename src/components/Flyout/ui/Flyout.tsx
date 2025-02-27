@@ -6,7 +6,7 @@ import { useContext } from 'react';
 const Flyout = () => {
   const selectionContext = useContext(SelectionContext);
 
-  const uselectAllHandler = () => {
+  const unselectAllHandler = () => {
     if (selectionContext?.unselectAllPeople)
       selectionContext.unselectAllPeople();
   };
@@ -28,7 +28,6 @@ const Flyout = () => {
       const encodedUri = encodeURI(content);
       const link = document.createElement('a');
       link.setAttribute('href', encodedUri);
-      link.setAttribute('href', encodedUri);
       link.setAttribute(
         'download',
         `${selectionContext.selectedPeople.length}_people.csv`
@@ -43,7 +42,7 @@ const Flyout = () => {
       className={`${styles.wrapper} ${selectionLength > 0 ? styles.visible : ''}`}
     >
       <span>{`${selectionLength} items selected`}</span>
-      <Button text={'Unselect all'} callback={uselectAllHandler} />
+      <Button text={'Unselect all'} callback={unselectAllHandler} />
       <Button text={'Download'} callback={() => download()} />
     </div>
   );

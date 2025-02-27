@@ -2,8 +2,9 @@ import { describe, expect, test, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import PeopleList from '../components/PeopleList';
 import styles from '../components/PeopleList/ui/PeopleList.module.scss';
-import { ThemeContext, ThemeContextType } from '@/ThemeContext';
+import { ThemeContext } from '@/ThemeContext';
 import { testPeopleArray2 } from './mockData';
+import { darkThemeContextValue, lightThemeContextValue } from './test-utils';
 
 vi.mock('next/navigation', async () => {
   const actual = await vi.importActual('next/navigation');
@@ -28,11 +29,6 @@ vi.mock('next/navigation', async () => {
 
 describe('PeopleList tests', () => {
   test('PeopleList without data', async () => {
-    const lightThemeContextValue: ThemeContextType = {
-      theme: 'light',
-      toggleTheme: () => {},
-    };
-
     const component = render(
       <ThemeContext.Provider value={lightThemeContextValue}>
         <PeopleList people={[]}>
@@ -48,11 +44,6 @@ describe('PeopleList tests', () => {
   });
 
   test('PeopleList with data', async () => {
-    const darkThemeContextValue: ThemeContextType = {
-      theme: 'dark',
-      toggleTheme: () => {},
-    };
-
     const component = render(
       <ThemeContext.Provider value={darkThemeContextValue}>
         <PeopleList people={testPeopleArray2}>

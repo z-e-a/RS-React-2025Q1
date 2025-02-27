@@ -1,16 +1,17 @@
 import { describe, expect, test, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import SearchBox from '../components/SearchBox';
-import { ThemeContext, ThemeContextType } from '@/ThemeContext';
+import { ThemeContext } from '@/ThemeContext';
+import { lightThemeContextValue } from './test-utils';
 
-const mocketRouterPush = vi.fn();
+const mockedRouterPush = vi.fn();
 
 vi.mock('next/router', async () => {
   const actual = await vi.importActual('next/router');
   return {
     ...actual,
     useRouter: () => ({
-      push: mocketRouterPush,
+      push: mockedRouterPush,
     }),
   };
 });
@@ -38,11 +39,6 @@ vi.mock('next/navigation', async () => {
 
 describe('SearchBox tests', async () => {
   test('Render SearchBox without crash', async () => {
-    const lightThemeContextValue: ThemeContextType = {
-      theme: 'light',
-      toggleTheme: () => {},
-    };
-
     const component = render(
       <ThemeContext.Provider value={lightThemeContextValue}>
         <SearchBox />
@@ -52,14 +48,14 @@ describe('SearchBox tests', async () => {
     const input = await screen.findByRole('searchbox');
     expect((input as HTMLInputElement).value).toMatch('test');
 
-    await fireEvent.input(input, { target: { value: 'new' } });
+    fireEvent.input(input, { target: { value: 'new' } });
 
-    const searchBnt = screen.getByRole('button');
-    expect(searchBnt.textContent).toMatch('search');
-    expect(searchBnt).toHaveProperty('type', 'submit');
+    const searchBtn = screen.getByRole('button');
+    expect(searchBtn.textContent).toMatch('search');
+    expect(searchBtn).toHaveProperty('type', 'submit');
 
-    await fireEvent.click(searchBnt);
-    expect(mocketRouterPush).toBeCalledWith('search?text=new');
+    fireEvent.click(searchBtn);
+    expect(mockedRouterPush).toBeCalledWith('search?text=new');
 
     component.unmount();
   });

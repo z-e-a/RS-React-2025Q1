@@ -23,14 +23,14 @@ vi.mock('next/navigation', async () => {
   };
 });
 
-const mocketRouterPush = vi.fn();
+const mockedRouterPush = vi.fn();
 
 vi.mock('next/router', async () => {
   const actual = await vi.importActual('next/compat/router');
   return {
     ...actual,
     useRouter: () => ({
-      push: mocketRouterPush,
+      push: mockedRouterPush,
     }),
   };
 });

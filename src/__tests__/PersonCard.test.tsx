@@ -2,8 +2,9 @@ import { describe, expect, test, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import PersonCard from '../components/PersonCard';
 import styles from '../components/PersonCard/ui/PersonCard.module.scss';
-import { ThemeContext, ThemeContextType } from '@/ThemeContext';
+import { ThemeContext } from '@/ThemeContext';
 import { testSinglePerson, testSinglePerson2 } from './mockData';
+import { darkThemeContextValue, lightThemeContextValue } from './test-utils';
 
 vi.mock('next/navigation', async () => {
   const actual = await vi.importActual('next/navigation');
@@ -28,15 +29,6 @@ vi.mock('next/navigation', async () => {
 
 describe('PersonCard tests', () => {
   test('Render PersonCard without crash', async () => {
-    const lightThemeContextValue: ThemeContextType = {
-      theme: 'light',
-      toggleTheme: () => {},
-    };
-    const darkThemeContextValue: ThemeContextType = {
-      theme: 'dark',
-      toggleTheme: () => {},
-    };
-
     let component = render(
       <ThemeContext.Provider value={lightThemeContextValue}>
         <PersonCard person={testSinglePerson} />
@@ -69,9 +61,6 @@ describe('PersonCard tests', () => {
     );
 
     const newLink = screen.getByRole('link');
-    // expect(newLink.getAttribute('href')?.split('?')[1]).toMatch(
-    //   'name=Luke+Skywalker&id=1&text=i'
-    // );
     expect(newLink.classList).not.toContain(styles.light);
 
     const article2 = screen.getByRole('article');

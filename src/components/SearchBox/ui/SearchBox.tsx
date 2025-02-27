@@ -1,9 +1,7 @@
 import React, { useState, useContext } from 'react';
-
 import styles from './SearchBox.module.scss';
 import Button from '../../Button';
 import { useRouter } from 'next/router';
-// import { useRouter } from 'next/compat/router';
 import { ThemeContext } from '@/ThemeContext';
 import { useSearchParams } from 'next/navigation';
 
@@ -50,7 +48,7 @@ const SearchBox = () => {
         value={localSearchText}
         onChange={onSearchTextChangeHandler}
       />
-      <Button text={'search'} submit={true}></Button>
+      <Button text={'search'} submit={true} />
     </form>
   );
 };

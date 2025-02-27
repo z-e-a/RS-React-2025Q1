@@ -2,27 +2,18 @@ import { describe, expect, test, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
 import Paginator from '../components/Paginator';
 import styles from '../components/Paginator/ui/Paginator.module.scss';
-import { ThemeContext, ThemeContextType } from '@/ThemeContext';
+import { ThemeContext } from '@/ThemeContext';
 import { PagingContext, PagingContextType } from '@/PagingContext';
-// import { renderWithProviders } from './test-utils';
-// import { ThemeContext } from '../app/Contexts';
-// import { MemoryRouter, Route, Routes } from 'react-router-dom';
-// import * as actions from '../entities/people/model/peopleViewSlice';
+import { lightThemeContextValue } from './test-utils';
 
-const mocketRouterPush = vi.fn();
+const mockedRouterPush = vi.fn();
 
 vi.mock('next/router', async () => {
   const actual = await vi.importActual('next/router');
   return {
-    // ...(await vi.importActual('next/navigation')),
     ...actual,
-    // useNavigate: () => mockedUseNavigate,
-    // useRouteError: () => mockedUseRouteError,
-    // isRouteErrorResponse: () => mockedIsRouteErrorResponse,
     useRouter: () => ({
-      // ...useSearchParams,
-      // ...actual.useSearchParams,
-      push: mocketRouterPush,
+      push: mockedRouterPush,
     }),
   };
 });
@@ -30,14 +21,8 @@ vi.mock('next/router', async () => {
 vi.mock('next/navigation', async () => {
   const actual = await vi.importActual('next/navigation');
   return {
-    // ...(await vi.importActual('next/navigation')),
     ...actual,
-    // useNavigate: () => mockedUseNavigate,
-    // useRouteError: () => mockedUseRouteError,
-    // isRouteErrorResponse: () => mockedIsRouteErrorResponse,
     useSearchParams: () => ({
-      // ...useSearchParams,
-      // ...actual.useSearchParams,
       get: (param: string) => {
         if (param == 'id') return '1';
         if (param == 'name') return 'Luke+Skywalker';
@@ -58,37 +43,6 @@ vi.mock('next/navigation', async () => {
 
 describe('Paginator tests', () => {
   test('Render Paginator without crash', async () => {
-    // const component = renderWithProviders(
-    //   <ThemeContext.Provider value={'light'}>
-    //     <MemoryRouter
-    //       initialEntries={['/search/detail?name=Luke+Skywalker&id=1&text=i']}
-    //     >
-    //       <Routes>
-    //         <Route path="*" element={<Paginator />} />
-    //       </Routes>
-    //     </MemoryRouter>
-    //   </ThemeContext.Provider>,
-    //   {
-    //     preloadedState: {
-    //       peopleView: {
-    //         currentPage: 2,
-    //         totalItemsCount: 51,
-    //         selectedPeople: [],
-    //         searchText: '',
-    //       },
-    //     },
-    //   }
-    // );
-
-    const lightThemeContextValue: ThemeContextType = {
-      theme: 'light',
-      toggleTheme: () => {},
-    };
-    // const darkThemeContextValue: ThemeContextType = {
-    //   theme: 'dark',
-    //   toggleTheme: () => {},
-    // };
-
     const pagingContextValue: PagingContextType = {
       totalItemsCount: 51,
       setTotalsCount: vi.fn(),
@@ -105,30 +59,21 @@ describe('Paginator tests', () => {
     const link = screen.getByTestId('paginator');
     expect(link.classList).toContain(styles.light);
 
-    const secondBnt = screen.getByText('2');
-    const nextBnt = screen.getByRole('button');
-    expect(secondBnt).toBeInstanceOf(HTMLAnchorElement);
-    expect(secondBnt.classList).toContain(styles.currentPageButton);
-    expect(nextBnt.textContent).toMatch('>');
+    const secondBtn = screen.getByText('2');
+    const nextBtn = screen.getByRole('button');
+    expect(secondBtn).toBeInstanceOf(HTMLAnchorElement);
+    expect(secondBtn.classList).toContain(styles.currentPageButton);
+    expect(nextBtn.textContent).toMatch('>');
 
-    await fireEvent.click(nextBnt);
+    fireEvent.click(nextBtn);
 
-    const sixthBnt = screen.getByText('6');
-    expect(sixthBnt).toBeDefined();
+    const sixthBtn = screen.getByText('6');
+    expect(sixthBtn).toBeDefined();
 
-    const prevBnt = screen.getByRole('button');
-    expect(prevBnt.textContent).toMatch('<');
+    const prevBtn = screen.getByRole('button');
+    expect(prevBtn.textContent).toMatch('<');
 
-    await fireEvent.click(prevBnt);
-
-    // const firstBnt = screen.getByText('1');
-
-    // const mockedSelectFirstPage = vi.spyOn(actions, 'setCurrentPage');
-
-    // await fireEvent.click(firstBnt);
-    // expect(firstBnt.classList).toContain(styles.currentPageButton);
-
-    // expect(mockedSelectFirstPage).toHaveBeenCalledWith({ currentPage: 1 });
+    fireEvent.click(prevBtn);
 
     component.unmount();
   });

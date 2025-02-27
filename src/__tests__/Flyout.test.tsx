@@ -25,14 +25,14 @@ vi.mock('next/navigation', async () => {
   };
 });
 
-const mocketRouterPush = vi.fn();
+const mockedRouterPush = vi.fn();
 
 vi.mock('next/router', async () => {
   const actual = await vi.importActual('next/compat/router');
   return {
     ...actual,
     useRouter: () => ({
-      push: mocketRouterPush,
+      push: mockedRouterPush,
     }),
   };
 });
@@ -40,13 +40,12 @@ vi.mock('next/router', async () => {
 describe('Flyout tests', () => {
   vi.spyOn(console, 'error').mockImplementation(() => null);
   test('Render Flyout without crash', async () => {
-    const mocketTogglePeopleSelection = vi.fn();
-    const mocketUnselectAllPeople = vi.fn();
+    const mockedUnselectAllPeople = vi.fn();
 
     const selectionContextValue: SelectionContextType = {
       selectedPeople: testPeopleArray2,
-      togglePeopleSelection: mocketTogglePeopleSelection,
-      unselectAllPeople: mocketUnselectAllPeople,
+      togglePeopleSelection: vi.fn(),
+      unselectAllPeople: mockedUnselectAllPeople,
     };
 
     render(
@@ -57,16 +56,16 @@ describe('Flyout tests', () => {
 
     const label = screen.getByText('2 items selected');
     expect(label).toBeDefined();
-    const unselectBnt = screen.getByText('Unselect all');
-    expect(unselectBnt).toBeInstanceOf(HTMLButtonElement);
+    const unselectBtn = screen.getByText('Unselect all');
+    expect(unselectBtn).toBeInstanceOf(HTMLButtonElement);
 
-    const downloadBnt = screen.getByText('Download');
-    expect(downloadBnt).toBeInstanceOf(HTMLButtonElement);
+    const downloadBtn = screen.getByText('Download');
+    expect(downloadBtn).toBeInstanceOf(HTMLButtonElement);
 
-    await fireEvent.click(downloadBnt);
+    await fireEvent.click(downloadBtn);
 
-    fireEvent.click(unselectBnt);
-    expect(mocketUnselectAllPeople).toHaveBeenCalledTimes(1);
+    fireEvent.click(unselectBtn);
+    expect(mockedUnselectAllPeople).toHaveBeenCalledTimes(1);
   });
   vi.clearAllMocks();
 });
