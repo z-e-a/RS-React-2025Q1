@@ -1,0 +1,15 @@
+.header {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: var(--data-color-light);
+  background-color: var(--data-color-dark);
+  border-radius: 10px;
+
+  &.light {
+    color: var(--data-color-dark);
+    background-color: var(--data-color-light);
+  }
+}

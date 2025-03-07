@@ -1,0 +1,32 @@
+.button {
+  padding: 5px 10px;
+  height: 2.5rem;
+  margin: 15px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--data-color-medium-dark);
+  color: var(--data-color-medium-light);
+  cursor: pointer;
+  transition: all 0.25s;
+
+  &:hover {
+    border-color: var(--data-color-accent);
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+
+  &[disabled] {
+    background-color: rgb(70, 70, 70);
+  }
+
+  &.light {
+    color: #1a1a1a;
+    background-color: #d9d9f9;
+  }
+}

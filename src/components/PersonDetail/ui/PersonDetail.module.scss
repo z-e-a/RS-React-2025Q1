@@ -1,0 +1,60 @@
+.detailContainer {
+  position: relative;
+  width: 30vw;
+  border-radius: 10px;
+  border: 1px dotted #e1e1e1;
+  padding: 5px;
+
+  &.light {
+    border-color: black;
+  }
+}
+
+.detailCaption {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.detailEntry {
+  list-style: none;
+  text-align: left;
+}
+
+.fieldName {
+  font-weight: bold;
+}
+
+.fieldValue {
+  overflow: ellipsis;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  padding: 5px;
+  width: 2rem;
+  height: 2rem;
+  border-width: 1px;
+  border-color: #ffffff;
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 50%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    width: 80%;
+    height: 1px;
+    background-color: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
