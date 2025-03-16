@@ -1,5 +1,6 @@
 .cardContainer {
   position: relative;
+  direction: initial;
 }
 
 .link {
@@ -26,5 +27,9 @@
   &._selected {
     background-color: #666eff4d;
     border: 2px solid #666eff;
+  }
+
+  & > img {
+    width: 80%;
   }
 }

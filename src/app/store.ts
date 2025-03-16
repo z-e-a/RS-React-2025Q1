@@ -1,9 +1,11 @@
 import { type TypedUseSelectorHook, useSelector } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { usersReducer } from '../entities/users';
+import { countriesReducer } from '../entities/countries/model/countriesSlice';
 
 export const rootReducer = combineReducers({
   users: usersReducer,
+  countries: countriesReducer,
 });
 
 export const store = configureStore({

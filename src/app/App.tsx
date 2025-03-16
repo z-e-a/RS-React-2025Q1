@@ -13,14 +13,19 @@ function App() {
   return (
     <>
       <Header />
+      <h2 className={styles.title}>Hom page</h2>
       <main className={styles.container}>
-        {usersList.map((user, idx) => (
-          <UserCard
-            key={idx}
-            user={user}
-            isLastAdded={usersList.length - 1 == idx}
-          />
-        ))}
+        {usersList.length > 0 ? (
+          usersList.map((user, idx) => (
+            <UserCard
+              key={idx}
+              user={user}
+              isLastAdded={usersList.length - 1 == idx}
+            />
+          ))
+        ) : (
+          <p>...Here will be an added users cards</p>
+        )}
       </main>
     </>
   );

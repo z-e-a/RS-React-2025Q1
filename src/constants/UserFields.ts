@@ -15,12 +15,13 @@ export const UserFields = [
     placeHolder: 'E-mail address',
   },
   {
-    type: 'string',
+    type: 'select',
     id: 'gender',
+    options: ['male', 'female'],
     placeHolder: 'Gender',
   },
   {
-    type: 'select',
+    type: 'text',
     id: 'country',
     options: ['Belarus', 'Germany', 'Kazakhstan', 'Russia', 'USA'],
     placeHolder: 'Country',
@@ -38,11 +39,10 @@ export const UserFields = [
   {
     type: 'checkbox',
     id: 'terms',
-    // placeHolder: 'Accept Terms and Conditions agreement ',
     placeHolder: 'Accept T&C agreement ',
   },
   {
-    type: 'string',
+    type: 'file',
     id: 'image',
     placeHolder: 'Image',
   },

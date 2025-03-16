@@ -43,6 +43,7 @@ const UserCard = ({ user, isLastAdded }: UserCardProps) => {
           <span>Terms accepted: </span>
           <span>{user.terms.toString()}</span>
         </p>
+        <img src={user.image} alt={user.name} />
       </article>
     </div>
   );

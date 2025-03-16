@@ -10,7 +10,7 @@ export interface UserType {
   gender: string;
   country: string;
   terms: boolean;
-  image: string | null;
+  image: string | undefined;
 }
 
 export interface UsersState {
