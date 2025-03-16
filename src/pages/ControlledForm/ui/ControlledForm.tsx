@@ -12,6 +12,7 @@ import userSchema from '../../../constants/schema';
 import { readFile } from '../../../utils';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import PasswordStrength from '../../../components/PasswordStrength';
 
 type UserData = Omit<UserType, 'password' | 'source' | 'image'> & {
   password1: string;
@@ -33,10 +34,13 @@ const ControlledForm = () => {
     handleSubmit,
     reset,
     formState: { errors, isValid },
+    watch,
   } = useForm({
     mode: 'onChange',
     resolver: yupResolver(userSchema),
   });
+
+  const password = watch('password1');
 
   const submit = async (data: UserData) => {
     const image = await readFile(data.image[0]);
@@ -99,6 +103,9 @@ const ControlledForm = () => {
                     return <option key={country.code} value={country.name} />;
                   })}
                 </datalist>
+              ) : null}
+              {field.id == 'password1' ? (
+                <PasswordStrength password={password} />
               ) : null}
             </label>
           ))}

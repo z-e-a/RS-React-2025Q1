@@ -6,6 +6,7 @@ import {
   FormEvent,
   MutableRefObject,
   RefObject,
+  useEffect,
   useRef,
   useState,
 } from 'react';
@@ -18,6 +19,7 @@ import { RootStateType, useAppSelector } from '../../../app/store';
 import userSchema from '../../../constants/schema';
 import { ValidationError } from 'yup';
 import { readFile, trowCustomValidationError } from '../../../utils';
+import PasswordStrength from '../../../components/PasswordStrength';
 
 const emptyErrors = {
   name: '',
@@ -41,6 +43,7 @@ const UncontrolledForm = () => {
   >((store): CountriesState => store.countries);
 
   const [errors, setErrors] = useState<typeof emptyErrors>(emptyErrors);
+  const [pass, setPass] = useState<string>('');
 
   const refs: {
     [key: string]: MutableRefObject<
@@ -104,6 +107,12 @@ const UncontrolledForm = () => {
     }
   };
 
+  useEffect(() => {
+    refs.password1.current?.addEventListener('input', (e) => {
+      setPass((e.target as HTMLInputElement).value ?? '');
+    });
+  }, [refs.password1]);
+
   return (
     <>
       <Header />
@@ -147,6 +156,9 @@ const UncontrolledForm = () => {
                     return <option key={country.code} value={country.name} />;
                   })}
                 </datalist>
+              ) : null}
+              {field.id == 'password1' ? (
+                <PasswordStrength password={pass} />
               ) : null}
             </label>
           ))}
