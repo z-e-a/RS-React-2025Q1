@@ -1,37 +1,20 @@
-import { useContext, useState } from 'react';
-
 import styles from './Header.module.scss';
-import Button from '../../Button';
-import SearchBox from '../../SearchBox';
-import Toggle from '../../Toggle';
-import { ThemeContext } from '@/ThemeContext';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-  const themeContext = useContext(ThemeContext);
-
-  const [hasError, setHasError] = useState<boolean>(false);
-
-  const onInvokeErrorClickHandler = () => {
-    setHasError(true);
-  };
-
-  if (hasError) {
-    throw new Error('Forced error');
-  }
-
   return (
-    <header
-      className={[
-        styles.header,
-        themeContext.theme == 'light' ? styles.light : '',
-      ].join(' ')}
-    >
-      <SearchBox />
-      <Button
-        text={'Invoke error'}
-        callback={onInvokeErrorClickHandler}
-      ></Button>
-      <Toggle labelsText={{ left: 'dark', right: 'light' }}></Toggle>
+    <header className={styles.header}>
+      <nav className={styles.navbar}>
+        <NavLink className={styles.navlink} to={'/home'}>
+          Home
+        </NavLink>
+        <NavLink className={styles.navlink} to={'/uncontrolled'}>
+          Uncontrolled form
+        </NavLink>
+        <NavLink className={styles.navlink} to={'/controlled'}>
+          React Hook form
+        </NavLink>
+      </nav>
     </header>
   );
 };

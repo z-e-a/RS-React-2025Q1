@@ -1,6 +1,4 @@
-import { useContext } from 'react';
 import styles from './Button.module.scss';
-import { ThemeContext } from '../../../ThemeContext';
 
 interface IButtonProps {
   text: string;
@@ -15,14 +13,9 @@ const Button = ({
   disabled = false,
   submit = false,
 }: IButtonProps) => {
-  const themeContext = useContext(ThemeContext);
-
   return (
     <button
-      className={[
-        styles.button,
-        themeContext.theme == 'light' ? styles.light : '',
-      ].join(' ')}
+      className={styles.button}
       type={submit ? 'submit' : 'button'}
       onClick={callback}
       disabled={disabled}
