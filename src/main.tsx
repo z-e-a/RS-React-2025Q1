@@ -10,6 +10,7 @@ import {
 import NotFound from './pages/NotFound';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
+import UncontrolledForm from './pages/UncontrolledForm';
 
 export const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
   },
   {
     path: 'uncontrolled/*',
-    element: <App />,
+    element: <UncontrolledForm />,
     errorElement: <NotFound />,
   },
   {

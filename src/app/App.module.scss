@@ -11,3 +11,11 @@
     background-color: white;
   }
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  direction: rtl;
+  gap: 15px;
+}

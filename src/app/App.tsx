@@ -1,5 +1,6 @@
 import { UsersState } from '@/entities/users/model/usersSlice';
 import Header from '../components/Header';
+import styles from './App.module.scss';
 
 import { RootStateType, useAppSelector } from './store';
 import UserCard from '../components/UserCard';
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className={styles.container}>
         {usersList.map((user, idx) => (
           <UserCard
             key={idx}

@@ -17,7 +17,7 @@ export interface UsersState {
   usersList: UserType[];
 }
 
-const defUser: UserType = {
+export const defUser: UserType = {
   source: 'uncontrolled form',
   name: 'Evgeny',
   email: 'test@test.com',
@@ -30,7 +30,8 @@ const defUser: UserType = {
 };
 
 const initialState: UsersState = {
-  usersList: [defUser],
+  // usersList: [defUser],
+  usersList: [],
 };
 
 export const usersSlice = createSlice({
