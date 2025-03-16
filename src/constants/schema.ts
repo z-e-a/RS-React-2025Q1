@@ -1,11 +1,13 @@
 import * as yup from 'yup';
+import { countries } from './countries';
+import { imageFileTypes } from '.';
 
 const userSchema = yup.object({
   name: yup
     .string()
     .trim()
     .required('name is required')
-    .matches(/^[A-ZА-Я]+/)
+    .matches(/^[A-ZА-Я]+/, 'first letter must be uppercased')
     .defined(),
   age: yup
     .number()
@@ -13,7 +15,8 @@ const userSchema = yup.object({
     .min(1, 'age must be positive')
     .defined(),
   gender: yup
-    .mixed()
+    // .mixed()
+    .string()
     .required('gender is required')
     .oneOf(['male', 'female'] as const)
     .defined(),
@@ -35,11 +38,32 @@ const userSchema = yup.object({
       'Password must have at least one uppercased letter'
     )
     .required('password is required'),
-  password2: yup.string().oneOf([yup.ref('password1')], 'Passwords must much'),
+  password2: yup
+    .string()
+    .required()
+    .oneOf([yup.ref('password1')], 'Passwords must much'),
+  country: yup
+    .string()
+    .required()
+    .oneOf(
+      countries.map((c) => c.name),
+      'country is not valid'
+    ),
   terms: yup
     .boolean()
+    .required()
     .oneOf([true], 'You have to accept The Terms and Conditions agreement'),
-  image: yup.string().required('Image file is required'),
+  image: yup
+    .mixed<FileList>()
+    .required('Image file is required')
+    .test('imgSize', 'file size must be less than 100kb', (image) => {
+      if (!image.length) return false;
+      return image[0].size <= 100000;
+    })
+    .test('imgFormat', 'only png and jpeg filetypes allowed', (image) => {
+      if (!image.length) return false;
+      return imageFileTypes.includes(image[0].type);
+    }),
 });
 
 export type userSchemaValidationType = yup.InferType<typeof userSchema>;

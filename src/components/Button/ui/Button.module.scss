@@ -12,7 +12,7 @@
   cursor: pointer;
   transition: all 0.25s;
 
-  &:hover {
+  &:not(:disabled):hover {
     border-color: var(--data-color-accent);
   }
 
@@ -21,8 +21,10 @@
     outline: 4px auto -webkit-focus-ring-color;
   }
 
-  &[disabled] {
-    background-color: rgb(70, 70, 70);
+  &:disabled {
+    background-color: rgb(99, 99, 99);
+    color: var(--data-color-medium-dark);
+    cursor: initial;
   }
 
   &.light {

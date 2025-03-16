@@ -10,27 +10,14 @@ export interface UserType {
   gender: string;
   country: string;
   terms: boolean;
-  image: string | undefined;
+  image: string;
 }
 
 export interface UsersState {
   usersList: UserType[];
 }
 
-export const defUser: UserType = {
-  source: 'uncontrolled form',
-  name: 'Evgeny',
-  email: 'test@test.com',
-  age: 44,
-  password: 'password',
-  gender: 'male',
-  country: 'Russia',
-  terms: true,
-  image: null,
-};
-
 const initialState: UsersState = {
-  // usersList: [defUser],
   usersList: [],
 };
 
