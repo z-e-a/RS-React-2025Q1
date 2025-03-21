@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Header />
-      <h2 className={styles.title}>Hom page</h2>
+      <h2 className={styles.title}>Home page</h2>
       <main className={styles.container}>
         {usersList.length > 0 ? (
           usersList.map((user, idx) => (

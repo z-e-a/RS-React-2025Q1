@@ -95,6 +95,7 @@ const ControlledForm = () => {
                   placeholder={field.placeHolder}
                   accept={field.type == 'file' ? '.jpeg,.jpg,.png' : undefined}
                   list={field.id == 'country' ? 'countries' : undefined}
+                  autoComplete="true"
                 />
               )}
               {field.id == 'country' ? (
