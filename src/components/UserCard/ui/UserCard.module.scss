@@ -1,0 +1,35 @@
+.cardContainer {
+  position: relative;
+  direction: initial;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+
+  &:visited,
+  &:hover,
+  &:active,
+  &:-webkit-any-link {
+    color: inherit;
+  }
+
+  &.light .card {
+    border-color: black;
+  }
+}
+
+.card {
+  padding: 10px 15px;
+  border: 1px dotted #e1e1e1;
+  border-radius: 10px;
+
+  &._selected {
+    background-color: #666eff4d;
+    border: 2px solid #666eff;
+  }
+
+  & > img {
+    width: 100px;
+  }
+}
