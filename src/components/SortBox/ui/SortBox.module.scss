@@ -1,0 +1,82 @@
+.sortForm {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  border: 1px dashed white;
+  border-radius: 5px;
+  padding: 15px;
+  min-height: 100px;
+}
+
+.formHeading {
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  padding: 0 10px;
+  margin: 0;
+  border: 1px dashed;
+  border-radius: 3px;
+  background-color: rgb(45, 45, 45);
+}
+
+.switchItem {
+  & > input[type='radio'] {
+    display: none;
+  }
+
+  & > label {
+    display: block;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border: 0.5px solid transparent;
+    border-radius: 3px;
+    text-align: left;
+    user-select: none;
+    transition: all 0.2s;
+  }
+
+  & > input[type='radio']:checked + label {
+    color: white;
+    background: rgb(82, 82, 82);
+  }
+}
+
+.fieldSet {
+  display: flex;
+  flex-direction: column;
+  justify-items: baseline;
+  margin-right: 30px;
+
+  &[data-disabled='true'] label {
+    opacity: 0.5;
+  }
+
+  &:not([data-disabled='true']) label {
+    cursor: pointer;
+
+    &:hover {
+      border: 0.5px solid #646cff;
+      border-color: #646cff;
+    }
+  }
+}
+
+.fieldsCaption {
+  user-select: none;
+  transition: all 0.2s;
+  padding-right: 5px;
+
+  &[data-disabled='true'] {
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .sortForm {
+    border: 1px dashed #242424;
+  }
+
+  .formHeading {
+    background-color: #d9d9f9;
+  }
+}
