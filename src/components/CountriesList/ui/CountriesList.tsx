@@ -1,5 +1,6 @@
+import { memo, useCallback, useMemo } from 'react';
 import { Country } from '../../../countries';
-import CountryCard from '../../CountryCard';
+import { CountryCard } from '../../CountryCard';
 import styles from './CountriesList.module.scss';
 
 interface CountriesListProps {
@@ -13,7 +14,7 @@ interface CountriesListProps {
   toggleVisitedCountry: (value: string) => void;
 }
 
-const CountriesList = ({
+const CountriesListInner = ({
   countries,
   isLoading,
   selectedRegion,
@@ -23,49 +24,62 @@ const CountriesList = ({
   visitedCountries,
   toggleVisitedCountry,
 }: CountriesListProps) => {
+  const filteredCountries = useMemo(() => {
+    let tmpCountries = countries.slice();
+
+    if (selectedRegion != 'All') {
+      tmpCountries = tmpCountries.filter(
+        (country) => country.region == selectedRegion
+      );
+    }
+
+    if (searchText) {
+      tmpCountries = tmpCountries.filter((country) =>
+        country.name.common.toLowerCase().includes(searchText.toLowerCase())
+      );
+    }
+
+    return tmpCountries;
+  }, [countries, searchText, selectedRegion]);
+
+  const viewCountries = useMemo(() => {
+    let tmpCountries: Country[] = filteredCountries;
+    if (sortingField == 'name') {
+      tmpCountries = tmpCountries.sort((a: Country, b: Country) => {
+        if (sortingOrder == 'ascending') {
+          if (a.name.common < b.name.common) return -1;
+          if (a.name.common > b.name.common) return 1;
+        } else {
+          if (a.name.common > b.name.common) return -1;
+          if (a.name.common < b.name.common) return 1;
+        }
+        return 0;
+      });
+    }
+
+    if (sortingField == 'population') {
+      tmpCountries = tmpCountries.sort((a: Country, b: Country) => {
+        if (sortingOrder == 'ascending') {
+          return a.population - b.population;
+        } else {
+          return b.population - a.population;
+        }
+      });
+    }
+    return tmpCountries;
+  }, [filteredCountries, sortingField, sortingOrder]);
+
+  const toggleVisitedCountryMemo = useCallback(
+    (countryCode: string) => toggleVisitedCountry(countryCode),
+    [toggleVisitedCountry]
+  );
+
   if (isLoading) {
     return <div>loading...</div>;
   }
 
   if (countries?.length <= 0) {
     return <div>no items found...</div>;
-  }
-
-  let viewCountries = countries.slice();
-
-  if (selectedRegion != 'All') {
-    viewCountries = viewCountries.filter(
-      (country) => country.region == selectedRegion
-    );
-  }
-
-  if (searchText) {
-    viewCountries = viewCountries.filter((country) =>
-      country.name.common.toLowerCase().includes(searchText.toLowerCase())
-    );
-  }
-
-  if (sortingField == 'name') {
-    viewCountries = viewCountries.sort((a: Country, b: Country) => {
-      if (sortingOrder == 'ascending') {
-        if (a.name.common < b.name.common) return -1;
-        if (a.name.common > b.name.common) return 1;
-      } else {
-        if (a.name.common > b.name.common) return -1;
-        if (a.name.common < b.name.common) return 1;
-      }
-      return 0;
-    });
-  }
-
-  if (sortingField == 'population') {
-    viewCountries = viewCountries.sort((a: Country, b: Country) => {
-      if (sortingOrder == 'ascending') {
-        return a.population - b.population;
-      } else {
-        return b.population - a.population;
-      }
-    });
   }
 
   return (
@@ -76,7 +90,7 @@ const CountriesList = ({
             country={country}
             key={country.cca3}
             isVisited={visitedCountries.includes(country.cca3)}
-            toggleVisitedCountry={toggleVisitedCountry}
+            toggleVisitedCountry={toggleVisitedCountryMemo}
           />
         ))}
       </section>
@@ -84,4 +98,4 @@ const CountriesList = ({
   );
 };
 
-export default CountriesList;
+export const CountriesList = memo(CountriesListInner);

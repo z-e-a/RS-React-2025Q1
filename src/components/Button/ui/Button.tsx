@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import styles from './Button.module.scss';
 
 interface IButtonProps {
@@ -7,7 +8,7 @@ interface IButtonProps {
   submit?: boolean;
 }
 
-const Button = ({
+const ButtonInner = ({
   text,
   callback,
   disabled = false,
@@ -25,4 +26,4 @@ const Button = ({
   );
 };
 
-export default Button;
+export const Button = memo(ButtonInner);

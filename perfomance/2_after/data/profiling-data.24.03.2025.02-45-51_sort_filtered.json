@@ -1,0 +1,1202 @@
+{
+  "version": 5,
+  "dataForRoots": [
+    {
+      "commitData": [
+        {
+          "changeDescriptions": [
+            [
+              8,
+              {
+                "context": false,
+                "didHooksChange": true,
+                "isFirstMount": false,
+                "props": [],
+                "state": null,
+                "hooks": [0]
+              }
+            ]
+          ],
+          "duration": 0.5,
+          "effectDuration": null,
+          "fiberActualDurations": [[8, 0.5]],
+          "fiberSelfDurations": [[8, 0.2]],
+          "passiveEffectDuration": null,
+          "priorityLevel": "Immediate",
+          "timestamp": 1292.3999998569489,
+          "updaters": [
+            {
+              "displayName": "SortBoxInner",
+              "id": 8,
+              "key": null,
+              "type": 8,
+              "hocDisplayNames": ["Memo"],
+              "compiledWithForget": false
+            }
+          ]
+        },
+        {
+          "changeDescriptions": [
+            [
+              8,
+              {
+                "context": false,
+                "didHooksChange": true,
+                "isFirstMount": false,
+                "props": [],
+                "state": null,
+                "hooks": [1]
+              }
+            ]
+          ],
+          "duration": 0.5,
+          "effectDuration": null,
+          "fiberActualDurations": [[8, 0.5]],
+          "fiberSelfDurations": [[8, 0.2]],
+          "passiveEffectDuration": null,
+          "priorityLevel": "Immediate",
+          "timestamp": 2211.899999856949,
+          "updaters": [
+            {
+              "displayName": "SortBoxInner",
+              "id": 8,
+              "key": null,
+              "type": 8,
+              "hocDisplayNames": ["Memo"],
+              "compiledWithForget": false
+            }
+          ]
+        },
+        {
+          "changeDescriptions": [
+            [
+              8,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["sortingFields", "sortingField", "sortingOrder"],
+                "state": null,
+                "hooks": []
+              }
+            ],
+            [
+              5,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["sortingFields", "sortingField", "sortingOrder"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              554,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["sortingField", "sortingOrder"],
+                "state": null,
+                "hooks": []
+              }
+            ],
+            [
+              3,
+              {
+                "context": false,
+                "didHooksChange": true,
+                "isFirstMount": false,
+                "props": [],
+                "state": null,
+                "hooks": [5, 6]
+              }
+            ]
+          ],
+          "duration": 1.4,
+          "effectDuration": null,
+          "fiberActualDurations": [
+            [8, 0.5],
+            [5, 0.7],
+            [554, 0.4],
+            [3, 1.4]
+          ],
+          "fiberSelfDurations": [
+            [8, 0.2],
+            [5, 0.2],
+            [554, 0.4],
+            [3, 0.3]
+          ],
+          "passiveEffectDuration": null,
+          "priorityLevel": "Immediate",
+          "timestamp": 3206.0999999046326,
+          "updaters": [
+            {
+              "displayName": "App",
+              "id": 3,
+              "key": null,
+              "type": 5,
+              "hocDisplayNames": null,
+              "compiledWithForget": false
+            }
+          ]
+        }
+      ],
+      "displayName": "ErrorBoundary",
+      "initialTreeBaseDurations": [
+        [1, 10.899999856948853],
+        [2, 9.299999713897705],
+        [3, 7.499999761581421],
+        [5, 1.0999999046325684],
+        [6, 0.6999998092651367],
+        [7, 0.39999985694885254],
+        [8, 0.40000009536743164],
+        [9, 0.10000014305114746],
+        [554, 6.199999809265137],
+        [627, 0.39999985694885254],
+        [628, 0.10000014305114746],
+        [657, 0.20000004768371582],
+        [658, 0.10000014305114746],
+        [677, 0.40000009536743164],
+        [678, 0.10000014305114746],
+        [687, 0.19999980926513672],
+        [688, 0.09999990463256836],
+        [693, 0.39999985694885254],
+        [694, 0],
+        [699, 0.19999980926513672],
+        [700, 0.09999990463256836],
+        [701, 0.09999990463256836],
+        [702, 0],
+        [711, 0.4999997615814209],
+        [712, 0.09999990463256836],
+        [713, 0.2999999523162842],
+        [714, 0.20000004768371582],
+        [717, 0.5],
+        [718, 0.20000004768371582],
+        [725, 0.2999999523162842],
+        [726, 0.09999990463256836],
+        [815, 0.20000004768371582],
+        [816, 0.09999990463256836],
+        [833, 0.3000001907348633],
+        [834, 0],
+        [847, 0.3000001907348633],
+        [848, 0.09999990463256836],
+        [875, 0.20000028610229492],
+        [876, 0.10000014305114746],
+        [905, 0.3000001907348633],
+        [906, 0.20000004768371582],
+        [951, 0.19999980926513672],
+        [952, 0.09999990463256836],
+        [985, 0.2999999523162842],
+        [986, 0.09999990463256836],
+        [1011, 0.3000001907348633],
+        [1012, 0.20000004768371582],
+        [1017, 0.20000004768371582],
+        [1018, 0.10000014305114746],
+        [1023, 0.20000004768371582],
+        [1024, 0.10000014305114746]
+      ],
+      "operations": [
+        [1, 1, 0],
+        [1, 1, 0, 4, 8, 400, 4, 5, 1100, 4, 3, 7500, 4, 2, 9299, 4, 1, 10900],
+        [
+          1, 1, 0, 4, 5, 1299, 4, 554, 6400, 3, 554, 21, 1023, 1017, 1011, 985,
+          951, 905, 875, 847, 833, 815, 725, 717, 713, 711, 701, 699, 693, 687,
+          677, 657, 627, 4, 3, 8000, 4, 2, 9800, 4, 1, 11400
+        ]
+      ],
+      "rootID": 1,
+      "snapshots": [
+        [
+          1,
+          {
+            "id": 1,
+            "children": [2],
+            "displayName": null,
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 11,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          2,
+          {
+            "id": 2,
+            "children": [3],
+            "displayName": "ErrorBoundary",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 1,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          3,
+          {
+            "id": 3,
+            "children": [5, 554],
+            "displayName": "App",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          5,
+          {
+            "id": 5,
+            "children": [6, 8],
+            "displayName": "Header",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          6,
+          {
+            "id": 6,
+            "children": [7],
+            "displayName": "SearchBoxInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          7,
+          {
+            "id": 7,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          8,
+          {
+            "id": 8,
+            "children": [9],
+            "displayName": "SortBoxInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          9,
+          {
+            "id": 9,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          554,
+          {
+            "id": 554,
+            "children": [
+              627, 657, 677, 687, 693, 699, 701, 711, 713, 717, 725, 815, 833,
+              847, 875, 905, 951, 985, 1011, 1017, 1023
+            ],
+            "displayName": "CountriesListInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          627,
+          {
+            "id": 627,
+            "children": [628],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "ESH",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          628,
+          {
+            "id": 628,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          657,
+          {
+            "id": 657,
+            "children": [658],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "TUN",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          658,
+          {
+            "id": 658,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          677,
+          {
+            "id": 677,
+            "children": [678],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "STP",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          678,
+          {
+            "id": 678,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          687,
+          {
+            "id": 687,
+            "children": [688],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "SDN",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          688,
+          {
+            "id": 688,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          693,
+          {
+            "id": 693,
+            "children": [694],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "SSD",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          694,
+          {
+            "id": 694,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          699,
+          {
+            "id": 699,
+            "children": [700],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "ZAF",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          700,
+          {
+            "id": 700,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          701,
+          {
+            "id": 701,
+            "children": [702],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "SOM",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          702,
+          {
+            "id": 702,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          711,
+          {
+            "id": 711,
+            "children": [712],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "SLE",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          712,
+          {
+            "id": 712,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          713,
+          {
+            "id": 713,
+            "children": [714],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "SYC",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          714,
+          {
+            "id": 714,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          717,
+          {
+            "id": 717,
+            "children": [718],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "SEN",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          718,
+          {
+            "id": 718,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          725,
+          {
+            "id": 725,
+            "children": [726],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "SHN",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          726,
+          {
+            "id": 726,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          815,
+          {
+            "id": 815,
+            "children": [816],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "MUS",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          816,
+          {
+            "id": 816,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          833,
+          {
+            "id": 833,
+            "children": [834],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "MDG",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          834,
+          {
+            "id": 834,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          847,
+          {
+            "id": 847,
+            "children": [848],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "LSO",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          848,
+          {
+            "id": 848,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          875,
+          {
+            "id": 875,
+            "children": [876],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "CIV",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          876,
+          {
+            "id": 876,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          905,
+          {
+            "id": 905,
+            "children": [906],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "GNB",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          906,
+          {
+            "id": 906,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          951,
+          {
+            "id": 951,
+            "children": [952],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "SWZ",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          952,
+          {
+            "id": 952,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          985,
+          {
+            "id": 985,
+            "children": [986],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "COM",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          986,
+          {
+            "id": 986,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          1011,
+          {
+            "id": 1011,
+            "children": [1012],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "BFA",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          1012,
+          {
+            "id": 1012,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          1017,
+          {
+            "id": 1017,
+            "children": [1018],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "IOT",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          1018,
+          {
+            "id": 1018,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          1023,
+          {
+            "id": 1023,
+            "children": [1024],
+            "displayName": "CountryCardInner",
+            "hocDisplayNames": ["Memo"],
+            "key": "BWA",
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          1024,
+          {
+            "id": 1024,
+            "children": [],
+            "displayName": "ButtonInner",
+            "hocDisplayNames": ["Memo"],
+            "key": null,
+            "type": 8,
+            "compiledWithForget": false
+          }
+        ]
+      ]
+    }
+  ],
+  "timelineData": [
+    {
+      "batchUIDToMeasuresKeyValueArray": [
+        [
+          1,
+          [
+            {
+              "type": "render-idle",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 10.099999904632568,
+              "duration": 2.0999999046325684
+            },
+            {
+              "type": "render",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 10.099999904632568,
+              "duration": 0.5999999046325684
+            },
+            {
+              "type": "commit",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 10.799999952316284,
+              "duration": 1.3999998569488525
+            },
+            {
+              "type": "layout-effects",
+              "batchUID": 1,
+              "depth": 1,
+              "lanes": [1],
+              "timestamp": 11.199999809265137,
+              "duration": 0
+            }
+          ]
+        ],
+        [
+          2,
+          [
+            {
+              "type": "render-idle",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 929.6999998092651,
+              "duration": 1.9000000953674316
+            },
+            {
+              "type": "render",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 929.6999998092651,
+              "duration": 0.6000001430511475
+            },
+            {
+              "type": "commit",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 930.3999998569489,
+              "duration": 1.2000000476837158
+            },
+            {
+              "type": "layout-effects",
+              "batchUID": 2,
+              "depth": 1,
+              "lanes": [1],
+              "timestamp": 930.6999998092651,
+              "duration": 0
+            }
+          ]
+        ],
+        [
+          3,
+          [
+            {
+              "type": "render-idle",
+              "batchUID": 3,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 1922.0999999046326,
+              "duration": 7.700000047683716
+            },
+            {
+              "type": "render",
+              "batchUID": 3,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 1922.0999999046326,
+              "duration": 1.5999999046325684
+            },
+            {
+              "type": "commit",
+              "batchUID": 3,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 1923.7999999523163,
+              "duration": 6
+            },
+            {
+              "type": "layout-effects",
+              "batchUID": 3,
+              "depth": 1,
+              "lanes": [1],
+              "timestamp": 1924.7999999523163,
+              "duration": 0.09999990463256836
+            }
+          ]
+        ]
+      ],
+      "componentMeasures": [
+        {
+          "componentName": "Memo(SortBoxInner)",
+          "duration": 0.20000004768371582,
+          "timestamp": 10.199999809265137,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Memo(SortBoxInner)",
+          "duration": 0.20000004768371582,
+          "timestamp": 929.7999999523163,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "App",
+          "duration": 0.3000001907348633,
+          "timestamp": 1922.1999998092651,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Header",
+          "duration": 0.19999980926513672,
+          "timestamp": 1922.5,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Memo(SortBoxInner)",
+          "duration": 0.20000004768371582,
+          "timestamp": 1922.6999998092651,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Memo(CountriesListInner)",
+          "duration": 0.3000001907348633,
+          "timestamp": 1923.1999998092651,
+          "type": "render",
+          "warning": null
+        }
+      ],
+      "duration": 1939.7999999523163,
+      "flamechart": [],
+      "internalModuleSourceToRanges": [],
+      "laneToLabelKeyValueArray": [
+        [1, "Sync"],
+        [2, "InputContinuousHydration"],
+        [4, "InputContinuous"],
+        [8, "DefaultHydration"],
+        [16, "Default"],
+        [32, "TransitionHydration"],
+        [64, "Transition"],
+        [128, "Transition"],
+        [256, "Transition"],
+        [512, "Transition"],
+        [1024, "Transition"],
+        [2048, "Transition"],
+        [4096, "Transition"],
+        [8192, "Transition"],
+        [16384, "Transition"],
+        [32768, "Transition"],
+        [65536, "Transition"],
+        [131072, "Transition"],
+        [262144, "Transition"],
+        [524288, "Transition"],
+        [1048576, "Transition"],
+        [2097152, "Transition"],
+        [4194304, "Retry"],
+        [8388608, "Retry"],
+        [16777216, "Retry"],
+        [33554432, "Retry"],
+        [67108864, "Retry"],
+        [134217728, "SelectiveHydration"],
+        [268435456, "IdleHydration"],
+        [536870912, "Idle"],
+        [1073741824, "Offscreen"]
+      ],
+      "laneToReactMeasureKeyValueArray": [
+        [
+          1,
+          [
+            {
+              "type": "render-idle",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 10.099999904632568,
+              "duration": 2.0999999046325684
+            },
+            {
+              "type": "render",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 10.099999904632568,
+              "duration": 0.5999999046325684
+            },
+            {
+              "type": "commit",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 10.799999952316284,
+              "duration": 1.3999998569488525
+            },
+            {
+              "type": "layout-effects",
+              "batchUID": 1,
+              "depth": 1,
+              "lanes": [1],
+              "timestamp": 11.199999809265137,
+              "duration": 0
+            },
+            {
+              "type": "render-idle",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 929.6999998092651,
+              "duration": 1.9000000953674316
+            },
+            {
+              "type": "render",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 929.6999998092651,
+              "duration": 0.6000001430511475
+            },
+            {
+              "type": "commit",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 930.3999998569489,
+              "duration": 1.2000000476837158
+            },
+            {
+              "type": "layout-effects",
+              "batchUID": 2,
+              "depth": 1,
+              "lanes": [1],
+              "timestamp": 930.6999998092651,
+              "duration": 0
+            },
+            {
+              "type": "render-idle",
+              "batchUID": 3,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 1922.0999999046326,
+              "duration": 7.700000047683716
+            },
+            {
+              "type": "render",
+              "batchUID": 3,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 1922.0999999046326,
+              "duration": 1.5999999046325684
+            },
+            {
+              "type": "commit",
+              "batchUID": 3,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 1923.7999999523163,
+              "duration": 6
+            },
+            {
+              "type": "layout-effects",
+              "batchUID": 3,
+              "depth": 1,
+              "lanes": [1],
+              "timestamp": 1924.7999999523163,
+              "duration": 0.09999990463256836
+            }
+          ]
+        ],
+        [2, []],
+        [4, []],
+        [8, []],
+        [16, []],
+        [32, []],
+        [64, []],
+        [128, []],
+        [256, []],
+        [512, []],
+        [1024, []],
+        [2048, []],
+        [4096, []],
+        [8192, []],
+        [16384, []],
+        [32768, []],
+        [65536, []],
+        [131072, []],
+        [262144, []],
+        [524288, []],
+        [1048576, []],
+        [2097152, []],
+        [4194304, []],
+        [8388608, []],
+        [16777216, []],
+        [33554432, []],
+        [67108864, []],
+        [134217728, []],
+        [268435456, []],
+        [536870912, []],
+        [1073741824, []]
+      ],
+      "nativeEvents": [],
+      "networkMeasures": [],
+      "otherUserTimingMarks": [],
+      "reactVersion": "18.3.1",
+      "schedulingEvents": [
+        {
+          "componentName": "Memo(SortBoxInner)",
+          "lanes": [1],
+          "timestamp": 10,
+          "type": "schedule-state-update",
+          "warning": null,
+          "componentStack": "\n    at SortBoxInner (http://localhost:5173/src/components/SortBox/ui/SortBox.tsx?t=1742772274153:24:11)\n    at header (<anonymous>)\n    at Header (http://localhost:5173/src/components/Header/ui/Header.tsx?t=1742772339303:21:3)\n    at App (http://localhost:5173/src/app/App.tsx?t=1742772339303:25:37)\n    at ErrorBoundary (http://localhost:5173/src/app/ErrorBoundary.tsx?t=1742772362513:8:5)"
+        },
+        {
+          "componentName": "Memo(SortBoxInner)",
+          "lanes": [1],
+          "timestamp": 929.5999999046326,
+          "type": "schedule-state-update",
+          "warning": null,
+          "componentStack": "\n    at SortBoxInner (http://localhost:5173/src/components/SortBox/ui/SortBox.tsx?t=1742772274153:24:11)\n    at header (<anonymous>)\n    at Header (http://localhost:5173/src/components/Header/ui/Header.tsx?t=1742772339303:21:3)\n    at App (http://localhost:5173/src/app/App.tsx?t=1742772339303:25:37)\n    at ErrorBoundary (http://localhost:5173/src/app/ErrorBoundary.tsx?t=1742772362513:8:5)"
+        },
+        {
+          "componentName": "App",
+          "lanes": [1],
+          "timestamp": 1921.8999998569489,
+          "type": "schedule-state-update",
+          "warning": null,
+          "componentStack": "\n    at App (http://localhost:5173/src/app/App.tsx?t=1742772339303:25:37)\n    at ErrorBoundary (http://localhost:5173/src/app/ErrorBoundary.tsx?t=1742772362513:8:5)"
+        },
+        {
+          "componentName": "App",
+          "lanes": [1],
+          "timestamp": 1922.0999999046326,
+          "type": "schedule-state-update",
+          "warning": null,
+          "componentStack": "\n    at App (http://localhost:5173/src/app/App.tsx?t=1742772339303:25:37)\n    at ErrorBoundary (http://localhost:5173/src/app/ErrorBoundary.tsx?t=1742772362513:8:5)"
+        }
+      ],
+      "snapshots": [],
+      "snapshotHeight": 0,
+      "startTime": 1145421.3000001907,
+      "suspenseEvents": [],
+      "thrownErrors": []
+    }
+  ]
+}

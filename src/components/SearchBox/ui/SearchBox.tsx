@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 
 import styles from './SearchBox.module.scss';
-import Button from '../../Button';
+import { Button } from '../../Button';
 
 interface SearchBoxProps {
   regions: string[];
@@ -11,7 +11,7 @@ interface SearchBoxProps {
   setSearchText: (text: string) => void;
 }
 
-const SearchBox = (props: SearchBoxProps) => {
+const SearchBoxInner = (props: SearchBoxProps) => {
   const [localSelectedRegion, setLocalSelectedRegion] = useState<string>('');
   const [localSearchText, setLocalSearchText] = useState<string>('');
 
@@ -39,12 +39,7 @@ const SearchBox = (props: SearchBoxProps) => {
       <h4 className={styles.formHeading}>Filter by...</h4>
       <label className={styles.filter}>
         Region:
-        <select /* onChange={(e) => setSelectedRegion(e.target.value)} */
-          onChange={onSelectRegionHandler}
-        >
-          {/* <option defaultChecked key={'All'} value={localSelectedRegion}>
-            All
-          </option> */}
+        <select onChange={onSelectRegionHandler}>
           {props.regions.map((region) => (
             <option key={region} value={region}>
               {region}
@@ -67,4 +62,4 @@ const SearchBox = (props: SearchBoxProps) => {
   );
 };
 
-export default SearchBox;
+export const SearchBox = memo(SearchBoxInner);

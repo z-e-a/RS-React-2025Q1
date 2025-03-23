@@ -1,1 +1,1 @@
-export { default } from './ui/CountryCard';
+export { CountryCard } from './ui/CountryCard';

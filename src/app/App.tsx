@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Loader from '../components/Loader';
-import CountriesList from '../components/CountriesList';
+import { CountriesList } from '../components/CountriesList';
 import { Country } from '../countries';
 import Header from '../components/Header';
 import { useLocalStorage } from './useLocalStorage';

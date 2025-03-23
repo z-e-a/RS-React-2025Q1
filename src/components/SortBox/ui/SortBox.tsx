@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 
 import styles from './SortBox.module.scss';
-import Button from '../../Button';
+import { Button } from '../../Button';
 
 interface SortBoxProps {
   sortingFields: string[];
@@ -11,7 +11,7 @@ interface SortBoxProps {
   setSortingOrder: (text: string) => void;
 }
 
-const SortBox = (props: SortBoxProps) => {
+const SortBoxInner = (props: SortBoxProps) => {
   const [localSortingField, setLocalSortingField] = useState<string>(
     props.sortingField
   );
@@ -103,4 +103,4 @@ const SortBox = (props: SortBoxProps) => {
   );
 };
 
-export default SortBox;
+export const SortBox = memo(SortBoxInner);

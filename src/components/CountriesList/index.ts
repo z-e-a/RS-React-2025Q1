@@ -1,1 +1,1 @@
-export { default } from './ui/CountriesList';
+export { CountriesList } from './ui/CountriesList';

@@ -1,1 +1,1 @@
-export { default } from './ui/SortBox';
+export { SortBox } from './ui/SortBox';

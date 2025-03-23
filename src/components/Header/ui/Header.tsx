@@ -1,5 +1,5 @@
-import SearchBox from '../../SearchBox';
-import SortBox from '../../SortBox';
+import { SearchBox } from '../../SearchBox';
+import { SortBox } from '../../SortBox';
 import styles from './Header.module.scss';
 
 interface HeaderProps {

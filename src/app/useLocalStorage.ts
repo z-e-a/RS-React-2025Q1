@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 export const useLocalStorage = (key: string, initialValue: string[]) => {
   const [storedValue, setStoredValue] = useState<string[]>(() => {
@@ -11,24 +11,32 @@ export const useLocalStorage = (key: string, initialValue: string[]) => {
     }
   });
 
-  const setValue = (value: string[] | ((value: string[]) => void)) => {
-    try {
-      const valueToStore =
-        value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore as string[]);
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  const setValue = useCallback(
+    (value: string[] | ((value: string[]) => void)) => {
+      try {
+        const valueToStore =
+          value instanceof Function ? value(storedValue) : value;
+        setStoredValue(valueToStore as string[]);
+        window.localStorage.setItem(key, JSON.stringify(valueToStore));
+      } catch (err) {
+        console.error(err);
+      }
+    },
+    [key, storedValue]
+  );
 
-  const toggleVisitedCountry = (countryCode: string) => {
-    if (storedValue.includes(countryCode)) {
-      setValue(storedValue.filter((storedCode) => storedCode !== countryCode));
-    } else {
-      setValue([...storedValue, countryCode]);
-    }
-  };
+  const toggleVisitedCountry = useCallback(
+    (countryCode: string) => {
+      if (storedValue.includes(countryCode)) {
+        setValue(
+          storedValue.filter((storedCode) => storedCode !== countryCode)
+        );
+      } else {
+        setValue([...storedValue, countryCode]);
+      }
+    },
+    [setValue, storedValue]
+  );
 
   return [storedValue, toggleVisitedCountry];
 };

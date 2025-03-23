@@ -1,5 +1,6 @@
+import { memo, useCallback } from 'react';
 import { Country } from '../../../countries';
-import Button from '../../Button';
+import { Button } from '../../Button';
 import styles from './CountryCard.module.scss';
 
 interface CountryCardProps {
@@ -8,7 +9,7 @@ interface CountryCardProps {
   toggleVisitedCountry: (value: string) => void;
 }
 
-const CountryCard = ({
+const CountryCardInner = ({
   country,
   isVisited,
   toggleVisitedCountry,
@@ -32,13 +33,13 @@ const CountryCard = ({
         </p>
         <Button
           text={isVisited ? 'clear visited mark' : 'mark as visited'}
-          callback={() => {
+          callback={useCallback(() => {
             toggleVisitedCountry(country.cca3);
-          }}
+          }, [country.cca3, toggleVisitedCountry])}
         />
       </article>
     </div>
   );
 };
 
-export default CountryCard;
+export const CountryCard = memo(CountryCardInner);

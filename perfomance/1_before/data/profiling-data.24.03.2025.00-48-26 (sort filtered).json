@@ -1,0 +1,1942 @@
+{
+  "version": 5,
+  "dataForRoots": [
+    {
+      "commitData": [
+        {
+          "changeDescriptions": [
+            [
+              7,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": [],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              6,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": [],
+                "state": null,
+                "hooks": []
+              }
+            ],
+            [
+              9,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": [],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              8,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["sortingFields", "sortingField", "sortingOrder"],
+                "state": null,
+                "hooks": []
+              }
+            ],
+            [
+              5,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["sortingFields", "sortingField", "sortingOrder"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              268,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              267,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              32,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              31,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              224,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              223,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              148,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              147,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              450,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              449,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              54,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              53,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              314,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              313,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              18,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              17,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              424,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              423,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              86,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              85,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              322,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              321,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              128,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              127,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              180,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              179,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              250,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              249,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              30,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              29,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              118,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              117,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              188,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              187,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              478,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              477,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              378,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              377,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              426,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              425,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              164,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["callback"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              163,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": ["toggleVisitedCountry"],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              10,
+              {
+                "context": false,
+                "didHooksChange": false,
+                "isFirstMount": false,
+                "props": [
+                  "sortingField",
+                  "sortingOrder",
+                  "toggleVisitedCountry"
+                ],
+                "state": null,
+                "hooks": null
+              }
+            ],
+            [
+              3,
+              {
+                "context": false,
+                "didHooksChange": true,
+                "isFirstMount": false,
+                "props": [],
+                "state": null,
+                "hooks": [5, 6]
+              }
+            ]
+          ],
+          "duration": 7.6,
+          "effectDuration": null,
+          "fiberActualDurations": [
+            [7, 0.1],
+            [6, 0.6],
+            [9, 0.1],
+            [8, 0.6],
+            [5, 1.3],
+            [268, 0.1],
+            [267, 0.3],
+            [32, 0.2],
+            [31, 0.4],
+            [224, 0.1],
+            [223, 0.3],
+            [148, 0.1],
+            [147, 0.3],
+            [450, 0.1],
+            [449, 0.2],
+            [54, 0.1],
+            [53, 0.3],
+            [314, 0.1],
+            [313, 0.3],
+            [18, 0],
+            [17, 0.2],
+            [424, 0],
+            [423, 0.3],
+            [86, 0],
+            [85, 0.2],
+            [322, 0],
+            [321, 0.1],
+            [128, 0.1],
+            [127, 0.3],
+            [180, 0.1],
+            [179, 0.3],
+            [250, 0],
+            [249, 0.2],
+            [30, 0.1],
+            [29, 0.2],
+            [118, 0.1],
+            [117, 0.3],
+            [188, 0],
+            [187, 0.2],
+            [478, 0],
+            [477, 0.2],
+            [378, 0.1],
+            [377, 0.3],
+            [426, 0.1],
+            [425, 0.3],
+            [164, 0],
+            [163, 0.2],
+            [10, 6],
+            [3, 7.6]
+          ],
+          "fiberSelfDurations": [
+            [7, 0.1],
+            [6, 0.3],
+            [9, 0.1],
+            [8, 0.3],
+            [5, 0.1],
+            [268, 0.1],
+            [267, 0.1],
+            [32, 0.2],
+            [31, 0.1],
+            [224, 0.1],
+            [223, 0],
+            [148, 0.1],
+            [147, 0.1],
+            [450, 0.1],
+            [449, 0.1],
+            [54, 0.1],
+            [53, 0.2],
+            [314, 0.1],
+            [313, 0.1],
+            [18, 0],
+            [17, 0.1],
+            [424, 0],
+            [423, 0.1],
+            [86, 0],
+            [85, 0.1],
+            [322, 0],
+            [321, 0.1],
+            [128, 0.1],
+            [127, 0.1],
+            [180, 0.1],
+            [179, 0.1],
+            [250, 0],
+            [249, 0.1],
+            [30, 0.1],
+            [29, 0.1],
+            [118, 0.1],
+            [117, 0.1],
+            [188, 0],
+            [187, 0.1],
+            [478, 0],
+            [477, 0.1],
+            [378, 0],
+            [377, 0.1],
+            [426, 0.1],
+            [425, 0.1],
+            [164, 0],
+            [163, 0.1],
+            [10, 0.5],
+            [3, 0.3]
+          ],
+          "passiveEffectDuration": null,
+          "priorityLevel": "Immediate",
+          "timestamp": 1868.2999999523163,
+          "updaters": [
+            {
+              "displayName": "App",
+              "id": 3,
+              "key": null,
+              "type": 5,
+              "hocDisplayNames": null,
+              "compiledWithForget": false
+            }
+          ]
+        }
+      ],
+      "displayName": "ErrorBoundary",
+      "initialTreeBaseDurations": [
+        [1, 8.899999618530273],
+        [2, 7.399999618530273],
+        [3, 5.899999618530273],
+        [5, 1.2000000476837158],
+        [6, 0.40000009536743164],
+        [7, 0.10000014305114746],
+        [8, 0.5999999046325684],
+        [9, 0.20000004768371582],
+        [10, 4.499999761581421],
+        [17, 0.20000004768371582],
+        [18, 0.10000014305114746],
+        [29, 0.20000004768371582],
+        [30, 0],
+        [31, 0.19999980926513672],
+        [32, 0.09999990463256836],
+        [53, 0.10000014305114746],
+        [54, 0],
+        [85, 0.09999990463256836],
+        [86, 0],
+        [117, 0.2999999523162842],
+        [118, 0.09999990463256836],
+        [127, 0.10000014305114746],
+        [128, 0.10000014305114746],
+        [147, 0.2999999523162842],
+        [148, 0.09999990463256836],
+        [163, 0.20000004768371582],
+        [164, 0.10000014305114746],
+        [179, 0.19999980926513672],
+        [180, 0.09999990463256836],
+        [187, 0.10000014305114746],
+        [188, 0.10000014305114746],
+        [223, 0.19999980926513672],
+        [224, 0.09999990463256836],
+        [249, 0.20000004768371582],
+        [250, 0.10000014305114746],
+        [267, 0.2999999523162842],
+        [268, 0.09999990463256836],
+        [313, 0.10000014305114746],
+        [314, 0.10000014305114746],
+        [321, 0.09999990463256836],
+        [322, 0],
+        [377, 0.2999999523162842],
+        [378, 0.10000014305114746],
+        [423, 0.20000004768371582],
+        [424, 0.10000014305114746],
+        [425, 0.09999990463256836],
+        [426, 0],
+        [449, 0.10000014305114746],
+        [450, 0],
+        [477, 0.2999999523162842],
+        [478, 0.09999990463256836]
+      ],
+      "operations": [
+        [
+          1, 1, 0, 4, 7, 0, 4, 6, 300, 4, 9, 99, 4, 8, 399, 4, 5, 799, 4, 268,
+          100, 4, 32, 199, 4, 31, 299, 4, 223, 299, 4, 147, 199, 4, 450, 99, 4,
+          449, 200, 4, 54, 99, 4, 53, 299, 4, 314, 99, 4, 313, 299, 4, 18, 0, 4,
+          424, 0, 4, 85, 200, 4, 128, 99, 4, 127, 199, 4, 179, 200, 4, 250, 0,
+          4, 249, 100, 4, 30, 99, 4, 117, 199, 4, 188, 0, 4, 187, 200, 4, 478,
+          0, 4, 477, 200, 4, 378, 99, 4, 377, 199, 4, 426, 99, 4, 425, 299, 4,
+          164, 0, 4, 10, 5199, 3, 10, 21, 267, 31, 223, 147, 449, 53, 313, 17,
+          423, 85, 321, 127, 179, 249, 29, 117, 187, 477, 377, 425, 163, 4, 3,
+          6299, 4, 2, 7799, 4, 1, 9299
+        ]
+      ],
+      "rootID": 1,
+      "snapshots": [
+        [
+          1,
+          {
+            "id": 1,
+            "children": [2],
+            "displayName": null,
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 11,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          2,
+          {
+            "id": 2,
+            "children": [3],
+            "displayName": "ErrorBoundary",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 1,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          3,
+          {
+            "id": 3,
+            "children": [5, 10],
+            "displayName": "App",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          5,
+          {
+            "id": 5,
+            "children": [6, 8],
+            "displayName": "Header",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          6,
+          {
+            "id": 6,
+            "children": [7],
+            "displayName": "SearchBox",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          7,
+          {
+            "id": 7,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          8,
+          {
+            "id": 8,
+            "children": [9],
+            "displayName": "SortBox",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          9,
+          {
+            "id": 9,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          10,
+          {
+            "id": 10,
+            "children": [
+              17, 29, 31, 53, 85, 117, 127, 147, 163, 179, 187, 223, 249, 267,
+              313, 321, 377, 423, 425, 449, 477
+            ],
+            "displayName": "CountriesList",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          17,
+          {
+            "id": 17,
+            "children": [18],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "SLE",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          18,
+          {
+            "id": 18,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          29,
+          {
+            "id": 29,
+            "children": [30],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "CIV",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          30,
+          {
+            "id": 30,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          31,
+          {
+            "id": 31,
+            "children": [32],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "TUN",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          32,
+          {
+            "id": 32,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          53,
+          {
+            "id": 53,
+            "children": [54],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "ZAF",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          54,
+          {
+            "id": 54,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          85,
+          {
+            "id": 85,
+            "children": [86],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "SEN",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          86,
+          {
+            "id": 86,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          117,
+          {
+            "id": 117,
+            "children": [118],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "GNB",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          118,
+          {
+            "id": 118,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          127,
+          {
+            "id": 127,
+            "children": [128],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "MUS",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          128,
+          {
+            "id": 128,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          147,
+          {
+            "id": 147,
+            "children": [148],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "SDN",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          148,
+          {
+            "id": 148,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          163,
+          {
+            "id": 163,
+            "children": [164],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "BWA",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          164,
+          {
+            "id": 164,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          179,
+          {
+            "id": 179,
+            "children": [180],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "MDG",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          180,
+          {
+            "id": 180,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          187,
+          {
+            "id": 187,
+            "children": [188],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "SWZ",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          188,
+          {
+            "id": 188,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          223,
+          {
+            "id": 223,
+            "children": [224],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "STP",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          224,
+          {
+            "id": 224,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          249,
+          {
+            "id": 249,
+            "children": [250],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "LSO",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          250,
+          {
+            "id": 250,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          267,
+          {
+            "id": 267,
+            "children": [268],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "ESH",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          268,
+          {
+            "id": 268,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          313,
+          {
+            "id": 313,
+            "children": [314],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "SOM",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          314,
+          {
+            "id": 314,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          321,
+          {
+            "id": 321,
+            "children": [322],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "SHN",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          322,
+          {
+            "id": 322,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          377,
+          {
+            "id": 377,
+            "children": [378],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "BFA",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          378,
+          {
+            "id": 378,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          423,
+          {
+            "id": 423,
+            "children": [424],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "SYC",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          424,
+          {
+            "id": 424,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          425,
+          {
+            "id": 425,
+            "children": [426],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "IOT",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          426,
+          {
+            "id": 426,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          449,
+          {
+            "id": 449,
+            "children": [450],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "SSD",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          450,
+          {
+            "id": 450,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          477,
+          {
+            "id": 477,
+            "children": [478],
+            "displayName": "CountryCard",
+            "hocDisplayNames": null,
+            "key": "COM",
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ],
+        [
+          478,
+          {
+            "id": 478,
+            "children": [],
+            "displayName": "Button",
+            "hocDisplayNames": null,
+            "key": null,
+            "type": 5,
+            "compiledWithForget": false
+          }
+        ]
+      ]
+    }
+  ],
+  "timelineData": [
+    {
+      "batchUIDToMeasuresKeyValueArray": [
+        [
+          1,
+          [
+            {
+              "type": "render-idle",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 10.299999952316284,
+              "duration": 13.900000095367432
+            },
+            {
+              "type": "render",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 10.299999952316284,
+              "duration": 8.100000143051147
+            },
+            {
+              "type": "commit",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 18.40000009536743,
+              "duration": 5.799999952316284
+            },
+            {
+              "type": "layout-effects",
+              "batchUID": 1,
+              "depth": 1,
+              "lanes": [1],
+              "timestamp": 19.5,
+              "duration": 0.10000014305114746
+            }
+          ]
+        ],
+        [
+          2,
+          [
+            {
+              "type": "render-idle",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [16],
+              "timestamp": 30.600000143051147,
+              "duration": 0.6999998092651367
+            },
+            {
+              "type": "render",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [16],
+              "timestamp": 30.600000143051147,
+              "duration": 0.2999999523162842
+            },
+            {
+              "type": "commit",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [16],
+              "timestamp": 31,
+              "duration": 0.2999999523162842
+            }
+          ]
+        ]
+      ],
+      "componentMeasures": [
+        {
+          "componentName": "App",
+          "duration": 0.10000014305114746,
+          "timestamp": 10.5,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Header",
+          "duration": 0.09999990463256836,
+          "timestamp": 10.700000047683716,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "SearchBox",
+          "duration": 0.09999990463256836,
+          "timestamp": 10.900000095367432,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 11.299999952316284,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "SortBox",
+          "duration": 0.20000004768371582,
+          "timestamp": 11.400000095367432,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0.09999990463256836,
+          "timestamp": 11.900000095367432,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountriesList",
+          "duration": 0.5,
+          "timestamp": 12,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0,
+          "timestamp": 12.700000047683716,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0.10000014305114746,
+          "timestamp": 12.799999952316284,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.09999990463256836,
+          "timestamp": 12.900000095367432,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0.19999980926513672,
+          "timestamp": 13.100000143051147,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0,
+          "timestamp": 13.400000095367432,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 13.600000143051147,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.09999990463256836,
+          "timestamp": 13.700000047683716,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 13.900000095367432,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.10000014305114746,
+          "timestamp": 14,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0.09999990463256836,
+          "timestamp": 14.100000143051147,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.09999990463256836,
+          "timestamp": 14.200000047683716,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0.09999990463256836,
+          "timestamp": 14.400000095367432,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.10000014305114746,
+          "timestamp": 14.5,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 14.799999952316284,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.10000014305114746,
+          "timestamp": 14.799999952316284,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 15,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.10000014305114746,
+          "timestamp": 15,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 15.299999952316284,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.10000014305114746,
+          "timestamp": 15.299999952316284,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 15.5,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0,
+          "timestamp": 15.600000143051147,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 15.700000047683716,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0,
+          "timestamp": 15.799999952316284,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0.09999990463256836,
+          "timestamp": 15.900000095367432,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.10000014305114746,
+          "timestamp": 16,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0.09999990463256836,
+          "timestamp": 16.200000047683716,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0,
+          "timestamp": 16.299999952316284,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 16.40000009536743,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.10000014305114746,
+          "timestamp": 16.5,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 16.600000143051147,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.09999990463256836,
+          "timestamp": 16.700000047683716,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 17,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.10000014305114746,
+          "timestamp": 17,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 17.200000047683716,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.09999990463256836,
+          "timestamp": 17.200000047683716,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 17.40000009536743,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.09999990463256836,
+          "timestamp": 17.40000009536743,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 17.600000143051147,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0,
+          "timestamp": 17.799999952316284,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 18,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "CountryCard",
+          "duration": 0.10000014305114746,
+          "timestamp": 18,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "Button",
+          "duration": 0,
+          "timestamp": 18.200000047683716,
+          "type": "render",
+          "warning": null
+        },
+        {
+          "componentName": "SearchBox",
+          "duration": 0.09999990463256836,
+          "timestamp": 30.700000047683716,
+          "type": "render",
+          "warning": null
+        }
+      ],
+      "duration": 41.299999952316284,
+      "flamechart": [],
+      "internalModuleSourceToRanges": [],
+      "laneToLabelKeyValueArray": [
+        [1, "Sync"],
+        [2, "InputContinuousHydration"],
+        [4, "InputContinuous"],
+        [8, "DefaultHydration"],
+        [16, "Default"],
+        [32, "TransitionHydration"],
+        [64, "Transition"],
+        [128, "Transition"],
+        [256, "Transition"],
+        [512, "Transition"],
+        [1024, "Transition"],
+        [2048, "Transition"],
+        [4096, "Transition"],
+        [8192, "Transition"],
+        [16384, "Transition"],
+        [32768, "Transition"],
+        [65536, "Transition"],
+        [131072, "Transition"],
+        [262144, "Transition"],
+        [524288, "Transition"],
+        [1048576, "Transition"],
+        [2097152, "Transition"],
+        [4194304, "Retry"],
+        [8388608, "Retry"],
+        [16777216, "Retry"],
+        [33554432, "Retry"],
+        [67108864, "Retry"],
+        [134217728, "SelectiveHydration"],
+        [268435456, "IdleHydration"],
+        [536870912, "Idle"],
+        [1073741824, "Offscreen"]
+      ],
+      "laneToReactMeasureKeyValueArray": [
+        [
+          1,
+          [
+            {
+              "type": "render-idle",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 10.299999952316284,
+              "duration": 13.900000095367432
+            },
+            {
+              "type": "render",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 10.299999952316284,
+              "duration": 8.100000143051147
+            },
+            {
+              "type": "commit",
+              "batchUID": 1,
+              "depth": 0,
+              "lanes": [1],
+              "timestamp": 18.40000009536743,
+              "duration": 5.799999952316284
+            },
+            {
+              "type": "layout-effects",
+              "batchUID": 1,
+              "depth": 1,
+              "lanes": [1],
+              "timestamp": 19.5,
+              "duration": 0.10000014305114746
+            }
+          ]
+        ],
+        [2, []],
+        [4, []],
+        [8, []],
+        [
+          16,
+          [
+            {
+              "type": "render-idle",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [16],
+              "timestamp": 30.600000143051147,
+              "duration": 0.6999998092651367
+            },
+            {
+              "type": "render",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [16],
+              "timestamp": 30.600000143051147,
+              "duration": 0.2999999523162842
+            },
+            {
+              "type": "commit",
+              "batchUID": 2,
+              "depth": 0,
+              "lanes": [16],
+              "timestamp": 31,
+              "duration": 0.2999999523162842
+            }
+          ]
+        ],
+        [32, []],
+        [64, []],
+        [128, []],
+        [256, []],
+        [512, []],
+        [1024, []],
+        [2048, []],
+        [4096, []],
+        [8192, []],
+        [16384, []],
+        [32768, []],
+        [65536, []],
+        [131072, []],
+        [262144, []],
+        [524288, []],
+        [1048576, []],
+        [2097152, []],
+        [4194304, []],
+        [8388608, []],
+        [16777216, []],
+        [33554432, []],
+        [67108864, []],
+        [134217728, []],
+        [268435456, []],
+        [536870912, []],
+        [1073741824, []]
+      ],
+      "nativeEvents": [],
+      "networkMeasures": [],
+      "otherUserTimingMarks": [],
+      "reactVersion": "18.3.1",
+      "schedulingEvents": [
+        {
+          "componentName": "App",
+          "lanes": [1],
+          "timestamp": 10,
+          "type": "schedule-state-update",
+          "warning": null,
+          "componentStack": "\n    at App (http://localhost:5173/src/app/App.tsx?t=1742731289812:25:37)\n    at ErrorBoundary (http://localhost:5173/src/app/ErrorBoundary.tsx:8:5)"
+        },
+        {
+          "componentName": "App",
+          "lanes": [1],
+          "timestamp": 10.100000143051147,
+          "type": "schedule-state-update",
+          "warning": null,
+          "componentStack": "\n    at App (http://localhost:5173/src/app/App.tsx?t=1742731289812:25:37)\n    at ErrorBoundary (http://localhost:5173/src/app/ErrorBoundary.tsx:8:5)"
+        }
+      ],
+      "snapshots": [],
+      "snapshotHeight": 0,
+      "startTime": 37464.799999952316,
+      "suspenseEvents": [],
+      "thrownErrors": []
+    }
+  ]
+}

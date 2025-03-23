@@ -27,6 +27,7 @@ You are in the main branch now. Switch into the branch `performance`.
 ```bash
 git switch performance
 ```
+
 **Installation**
 
 Install the project dependencies using npm:
@@ -43,7 +44,6 @@ npm run dev
 
 Open [http://localhost:5173/](http://localhost:5173/) with your browser to see the result and test functionality.
 
-
 #### Perfomance Profiling
 
 ##### Before optimizations
@@ -51,14 +51,41 @@ Open [http://localhost:5173/](http://localhost:5173/) with your browser to see t
 [profiler data](perfomance/1_before/data)
 
 1. Initial load
-![initial load flamegrapth](perfomance/1_before/1_initial_load_flamegrapth.png)
-![initial load ranked](perfomance/1_before/1_initial_load_ranked.png)
+   ![initial load flamegrapth](perfomance/1_before/1_initial_load_flamegrapth.png)
+   ![initial load ranked](perfomance/1_before/1_initial_load_ranked.png)
 
 2. Filter
-![filter flamegrapth](perfomance/1_before/2_filter_flamegrapth.png)
-![filter ranked](perfomance/1_before/2_filter_ranked.png)
+   ![filter flamegrapth](perfomance/1_before/2_filter_flamegrapth.png)
+   ![filter ranked](perfomance/1_before/2_filter_ranked.png)
 
 3. Sort
-![sort flamegrapth](perfomance/1_before/3_sort_flamegrapth.png)
-![sort ranked](perfomance/1_before/3_sort_ranked.png)
+   ![sort flamegrapth](perfomance/1_before/3_sort_flamegrapth.png)
+   ![sort ranked](perfomance/1_before/3_sort_ranked.png)
 
+4. Sort filtered
+   ![sort filtered flamegrapth](perfomance/1_before/4_sort_filtred_flamegrapth.png.png)
+   ![sort filtered ranked](perfomance/1_before/4_sort_filtred_ranked.png)
+
+##### After optimizations (react.memo, useMemo, useCallback)
+
+[profiler data](perfomance/2_after/data)
+
+1. Initial load
+   ![initial load flamegrapth](perfomance/2_after/1_Initial_load_flamegraph.png)
+   ![initial load ranked](perfomance/2_after/1_Initial_load_ranked.png)
+
+2. Filter
+   ![filter flamegrapth](perfomance/2_after/2_filter_flamegraph.png)
+   ![filter ranked](perfomance/2_after/2_filter_ranked.png)
+
+3. Sort
+   ![sort flamegrapth](perfomance/2_after/3_sort_framegraph.png)
+   ![sort ranked](perfomance/2_after/3_sort_ranked.png)
+
+4. Sort filtered
+   ![sort filtered flamegrapth](perfomance/2_after/4_sort_filtered_flamegraph.png)
+   ![sort filtered ranked](perfomance/2_after/4_sort_filtered_ranked.png)
+
+#### Conclusion
+
+As a result of optimization through the using of React.memo, useMemo, useCallback functions rendering time reduced on average 2 times (from 247.9 ms to 138.2 ms)
